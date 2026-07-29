@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-100: #0C032D;
+  --color-brand-200: #1E1E1E;
+  --color-brand-300: #2A1C8A;
+  --color-brand-400: #4227B4;
+  --color-brand-500: #6F6F6F;
+  --color-brand-600: #707070;
+  --color-brand-700: #B7B7B7;
+  --color-brand-accent: #FF8C36;
+  --color-brand-light: #E8E8E8;
+  --color-brand-lighter: #E4E4E4;
+  --color-brand-lightest: #E7E7E7;
+  --color-brand-dark: #181818;
+  
+  --font-clash: "Clash Display", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    @apply bg-brand-100 text-white font-inter;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-clash font-semibold;
+  }
+}
+
+/* Custom styles based on Vertex Studio Website.css */
+.text-gradient {
+  background: linear-gradient(90deg, #FFFFFF 0%, #FF8C36 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* CSS Scroll Snapping */
+.snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
