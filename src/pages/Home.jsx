@@ -53,6 +53,20 @@ const services = [
   ['Group 36.svg', 'Design Consultation', 'Helping businesses make better design decisions with strategic guidance.'],
   ['Group 38.svg', 'Video Editing', 'Short-form videos to grab attention and boost engagement.'],
 ];
+const workLeft = [
+  ['Free_Doypack_Mockup_2@2x.png', 'Akiya packaging design'],
+  ['Mockups (3)@2x.png', 'Brand stationery design'],
+  ['REPLACE THIS SCREEN111121117111111111@2x.png', 'Brand collateral'],
+  ['WhatsApp Image 2024-09-24 at 23.55.49_01c0c17b@2x.png', 'Brand collateral'],
+  ['O-morning star tea 2@2x.png', 'Morning Star Tea packaging'],
+];
+const workRight = [
+  ['Marigold Mystique Front@2x.png', 'Marigold Mystique packaging'],
+  ['WhatsApp Image 2024-08-28 at 21.22.50_a593d46b@2x.png', 'Brand collateral'],
+  ['Mockups 4@2x.png', 'Brand mockup'],
+  ['Cold brew@2x.png', 'Cold brew packaging'],
+  ['OG Mockup@2x.png', 'Brand mockup'],
+];
 
 export default function Home() {
   return <ReactFullpage
@@ -102,8 +116,8 @@ export default function Home() {
         <div className="work__layout">
           <div className="work__copy"><p className="eyebrow">Selected Work</p><h2 className="display">Crafted with Purpose.</h2><p className="muted">Every project reflects our commitment to thoughtful design, usability, and measurable business value.</p><a className="button button--violet" href="#contact">View Our Work <span className="arrow">↗</span></a></div>
           <div className="work__masonry" aria-label="Selected work">
-            <div className="work__column"><div className="work-card"><img src={`${assets}Free_Doypack_Mockup_2@2x.png`} alt="Akiya packaging design" /></div><div className="work-card"><img src={`${assets}Mockups (3)@2x.png`} alt="Brand stationery design" /></div><div className="work-card"><img src={`${assets}WhatsApp Image 2024-08-28 at 21.22.50_a593d46b@2x.png`} alt="Brand collateral" /></div></div>
-            <div className="work__column"><div className="work-card"><img src={`${assets}Marigold Mystique Front@2x.png`} alt="Marigold Mystique packaging" /></div><div className="work-card work-card--logo"><img src={`${assets}Group 43@2x.png`} alt="Vertex Studio identity" /></div><div className="work-card"><img src={`${assets}Choicos Choice - White on Blue0@2x.png`} alt="Choicos Choice packaging" /></div></div>
+            <div className="work__column"><div className="work__track">{[...workLeft, ...workLeft].map(([file, alt], i) => <div className="work-card" key={i}><img src={`${assets}${file}`} alt={alt} /></div>)}</div></div>
+            <div className="work__column"><div className="work__track work__track--b">{[...workRight, ...workRight].map(([file, alt], i) => <div className="work-card" key={i}><img src={`${assets}${file}`} alt={alt} /></div>)}</div></div>
           </div>
         </div>
       </section>
