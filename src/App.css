@@ -55,10 +55,11 @@ a { color: inherit; text-decoration: none; }
 @keyframes client-slide { from { transform: translateX(100vw); } to { transform: translateX(calc(-1 * clamp(150px, 12.5vw, 180px))); } }
 
 .services { gap: clamp(36px, 6svh, 70px); }
-.services__intro { display: grid; grid-template-columns: 1fr 1fr; gap: 9%; align-items: start; }
-.services__intro .display { color: #4e18bd; font-size: clamp(50px, min(9.2vw, 11svh), 126px); line-height: .84; }
-.services__copy { max-width: 500px; padding-top: 20px; }
-.services__copy h2 { margin: 0 0 13px; font-size: clamp(20px, 2.2vw, 30px); letter-spacing: -.01em; }
+.services__intro { display: grid; grid-template-columns: 1fr 1fr; gap: 11%; align-items: center; }
+.services__intro .display { color: #4e18bd; font-size: clamp(50px, min(9.2vw, 11svh), 126px); line-height: .92; letter-spacing: -.02em; }
+.services__copy { max-width: 700px; padding-top: 20px; }
+.services__copy h2 { margin: 0 0 13px; font-size: clamp(20px, 2.35vw, 32px); letter-spacing: -.01em; }
+.services__copy .muted { font-size: clamp(15px, 1.05vw, 20px); }
 .services__copy .button { margin-top: 21px; }
 .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(22px, 4svh, 50px) 6%; padding-top: clamp(18px, 3svh, 35px); }
 .service-card { min-height: clamp(80px, 10svh, 120px); }
