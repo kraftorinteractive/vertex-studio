@@ -60,6 +60,7 @@ export default function Home() {
     navigation={true}
     navigationPosition="right"
     responsiveWidth={800}
+    credits={{ enabled: false }}
     render={() => <ReactFullpage.Wrapper>
       <section className="section hero">
         <HeroVideo />

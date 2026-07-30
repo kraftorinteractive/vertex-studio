@@ -12,6 +12,7 @@ export default function About() {
   navigation={true}
   navigationPosition="right"
   responsiveWidth={800}
+  credits={{ enabled: false }}
   render={() => <ReactFullpage.Wrapper>
   <section className="section about-hero"><div className="about-hero__layout"><img className="about-hero__image" src="/assets/Mask Group 3@2x.png" alt="Illuminated Vertex mark" /><div><h1 className="display">Designing with Purpose.<br />Building with Precision.</h1><div className="muted"><p>Vertex Studio is a creative design and development studio dedicated to helping businesses build meaningful brands, intuitive digital products, and impactful customer experiences.</p><p>With over 10 years of industry expertise, we combine strategic thinking, creativity, and technology to deliver solutions that are visually compelling, user-centred, and built for long-term business growth.</p><p>From ambitious startups to established enterprises, we partner with organisations that value thoughtful design, innovation, and lasting relationships.</p></div></div></div></section>
   <section className="section mission"><h2 className="display">Mission Vision</h2><p>To create purposeful design solutions that inspire confidence, strengthen brands, and deliver measurable business impact through creativity, innovation, and collaboration.</p></section>
