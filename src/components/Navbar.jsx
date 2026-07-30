@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-export default function Navbar() {
+export default function Navbar({ scoped = false }) {
   const { pathname } = useLocation();
   const [compact, setCompact] = useState(false);
   useEffect(() => {
@@ -9,7 +9,7 @@ export default function Navbar() {
     listener(); window.addEventListener('scroll', listener, { passive: true });
     return () => window.removeEventListener('scroll', listener);
   }, []);
-  return <header className={`topbar ${compact ? 'topbar--dark' : ''}`}>
+  return <header className={`topbar ${scoped ? 'topbar--scoped' : ''} ${compact ? 'topbar--dark' : ''}`}>
     <Link to="/" aria-label="Vertex Studio home"><img className="brand-mark" src="/assets/Group 19.svg" alt="" /></Link>
     <nav className="topnav" aria-label="Main navigation">
       <Link to="/about" aria-current={pathname === '/about' ? 'page' : undefined}>About</Link>

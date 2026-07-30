@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+const tickerLabels = ['Logo Design', 'Visual Identity', 'Website Development', 'Digital Marketing Assets', 'Packaging Design', 'Brochures'];
+
 export default function FooterSection() {
   return <section className="section footer" id="contact">
     <div className="footer__top">
@@ -10,10 +12,17 @@ export default function FooterSection() {
       </div>
       <img className="footer__art" src="/assets/Mask Group 3@2x.png" alt="Illuminated Vertex mark" />
     </div>
-    <div className="footer__word">VERTEX</div>
-    <div className="ticker"><span>•</span><span>Logo Design</span><span>•</span><span>Visual Identity</span><span>•</span><span>Website Development</span><span>•</span><span>Digital Marketing Assets</span><span>•</span><span>Packaging Design</span><span>•</span><span>Brochures</span></div>
+    <div className="vertex-section">
+      <img className="vertex-image" src="/assets/Group 81@2x.png" alt="VERTEX" />
+      <div className="marquee-bar" aria-hidden="true">
+        <div className="marquee-bar__glow" />
+        <div className="marquee-bar__glass">
+          <div className="track">{[...tickerLabels, ...tickerLabels].flatMap((label, i) => [<span className="dot" key={`b${i}`} />, <span key={`t${i}`}>{label}</span>])}</div>
+        </div>
+      </div>
+    </div>
     <div className="footer__bottom">
-      <div className="footer__identity"><img src="/assets/Group 43@2x.png" alt="Vertex Studio" /><p>Designing brands.<br />Creating experiences.<br />Building digital success.</p></div>
+      <div className="footer__identity"><div className="footer__brand"><span className="footer__brand-icon" aria-hidden="true" /><span className="footer__brand-name">VERTEX</span><span className="footer__brand-sub">STUDIO</span></div><p>Designing brands.<br />Creating experiences.<br />Building digital success.</p></div>
       <nav className="footer__links"><Link to="/about">About</Link><a href="/#work">Portfolio</a><a href="#contact">Contact</a></nav>
       <p className="copyright">© 2026 Vertex Studio. All Rights Reserved.</p>
     </div>

@@ -1,4 +1,5 @@
 import FooterSection from '../components/FooterSection';
+import Navbar from '../components/Navbar';
 import fullpageExports from '@fullpage/react-fullpage';
 import { useEffect, useRef, useState } from 'react';
 
@@ -77,6 +78,7 @@ export default function Home() {
     credits={{ enabled: false }}
     render={() => <ReactFullpage.Wrapper>
       <section className="section hero">
+        <Navbar scoped />
         <HeroVideo />
         <div className="hero__monogram" aria-hidden="true" />
         <div className="hero__content">
