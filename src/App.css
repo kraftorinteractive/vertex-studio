@@ -67,13 +67,17 @@ a { color: inherit; text-decoration: none; }
 .service-card h3 { margin: 0 0 10px; font-size: 20px; letter-spacing: -.01em; }
 .service-card p { margin: 0; color: #aaa; font-size: 14px; line-height: 1.45; }
 
-.stats { overflow: hidden; background: #321ba2; }
-.stats::after, .process::after { content: ''; position: absolute; right: -8%; bottom: -18%; width: 60%; height: 115%; border-radius: 56% 0 0 0; background: #12035e; opacity: .8; z-index: 0; }
+.stats { overflow: hidden; background: linear-gradient(100deg, #7a2edb 0%, #2b0091 100%); }
+.stats__bg-shape { position: absolute; right: 0; bottom: 0; width: 41.4vw; height: 41.82vw; background-color: #2b0091; -webkit-mask: url('/assets/Group 43@2x.png') center / cover no-repeat; mask: url('/assets/Group 43@2x.png') center / cover no-repeat; mix-blend-mode: multiply; opacity: .41; z-index: 0; }
+.process::after { content: ''; position: absolute; right: -8%; bottom: -18%; width: 60%; height: 115%; border-radius: 56% 0 0 0; background: #12035e; opacity: .8; z-index: 0; }
 .stats__top, .stats__grid { position: relative; z-index: 1; }
-.stats__top { display: grid; grid-template-columns: 1fr .85fr; align-items: center; }
-.stats__top h2 { font-size: clamp(42px, 4.5vw, 62px); line-height: 1.04; }
+.stats__top { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(18px, 3svh, 30px); align-items: center; }
+.stats__top > div:first-child { grid-column: 1 / 4; }
+.stats__top h2 { font-size: clamp(42px, 4.5vw, 62px); line-height: 1.04; letter-spacing: -.02em; }
 .stats__top .muted { max-width: 550px; font-size: 15px; }
-.stats__logo { width: min(275px, 80%); justify-self: end; mix-blend-mode: screen; }
+.stats__logo { grid-column: 4; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; width: 100%; margin-left: -22%; }
+.stats__logo-icon { width: 54px; height: auto; }
+.stats__logo-word { width: 100%; height: auto; }
 .stats__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(18px, 3svh, 30px); margin-top: clamp(36px, 6svh, 80px); }
 .stat strong { display: block; color: var(--orange); font-size: clamp(48px, 5.8vw, 78px); letter-spacing: -.07em; }
 .stat span { color: #c6c2dc; font-size: 14px; }

@@ -90,9 +90,10 @@ export default function Home() {
       </section>
 
       <section className="section stats">
+        <div className="stats__bg-shape" aria-hidden="true" />
         <div className="stats__top">
           <div><p className="eyebrow">Why Vertex Studio</p><h2 className="display">Experience.<br />Strategy. Precision.</h2><p className="muted">Every project is approached with research, strategy, and attention to detail, ensuring every solution serves both users and business goals.</p></div>
-          <img className="stats__logo" src={`${assets}Group 43@2x.png`} alt="Vertex Studio" />
+          <div className="stats__logo"><img className="stats__logo-word" src={`${assets}Group 55.svg`} alt="Vertex Studio" /></div>
         </div>
         <div className="stats__grid">{[['10+', 'Years of Experience'], ['100+', 'Projects Delivered'], ['20+', 'Industries Served'], ['98%', 'Client Satisfaction']].map(([value, label]) => <div className="stat" key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>
       </section>
