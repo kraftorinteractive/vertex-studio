@@ -122,22 +122,25 @@ a { color: inherit; text-decoration: none; }
 @keyframes dot-pulse { 0%, 82%, 100% { box-shadow: 0 0 12px #9e76ff; transform: scale(1); } 91% { box-shadow: 0 0 22px #b98bff, 0 0 42px rgba(158,118,255,.6); transform: scale(1.2); } }
 .step h3 { margin: 0 0 12px; font-size: 21px; letter-spacing: -.01em; }
 .step p { margin: 0; color: #bab6c9; font-size: 14px; line-height: 1.45; }
-.team { background-color: #030303; }
-.team__head { position: relative; z-index: 1; text-align: center; margin-top: -3svh; }
+.team { background-color: #030303; justify-content: center; gap: clamp(18px, 3.2svh, 36px); overflow: hidden; padding-top: clamp(72px, 8svh, 96px); padding-bottom: clamp(28px, 3.5svh, 44px); }
+.team__head { position: relative; z-index: 1; flex-shrink: 0; text-align: center; }
 .team__head h2 { font-size: clamp(34px, 4.5vw, 62px); letter-spacing: -.01em; }
-.team-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; max-width: 1220px; width: 100%; margin: clamp(20px, 4svh, 38px) auto 0; }
-.person { aspect-ratio: 316 / 663; max-height: 40svh; padding: 25px 20px; overflow: hidden; border-radius: 29px; background: linear-gradient(135deg,#32109a,#6320d7); position: relative; }
-.person h3 { position: relative; z-index: 1; margin: 0 0 8px; font-size: 19px; line-height: 1.17; letter-spacing: -.01em; }
-.person p { position: relative; z-index: 1; margin: 0; color: #c8a7ff; font-size: 13px; line-height: 1.42; }
-.person::after { content: ''; position: absolute; z-index: 0; right: 12%; bottom: -2%; width: 76%; height: 55%; border-radius: 48% 48% 10% 10%; background: #080808; opacity: .9; }
-.person--portrait::after { display: none; }
-.person--portrait { padding: 0; }
-.person--portrait img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; }
-.person--portrait::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 50.08%; background: linear-gradient(185deg, rgba(58,34,172,0) 0%, #321da6 100%); mix-blend-mode: screen; z-index: 1; pointer-events: none; }
-.person--portrait h3 { position: absolute; top: 5.73%; left: 9.49%; right: 9.49%; margin: 0; font-family: "Clash Display", Arial, sans-serif; font-weight: 600; font-size: 28px; line-height: 35px; color: #fff; letter-spacing: 0; z-index: 2; }
-.person--portrait > p:not(.person__bio) { position: absolute; top: 18.25%; left: 9.49%; width: 80.4%; margin: 0; font-family: Inter, Arial, sans-serif; font-weight: 400; font-size: 18px; line-height: 30px; color: #b7b7b7; letter-spacing: 0; z-index: 2; }
-.person--portrait .person__bio { position: absolute; top: 32.73%; left: 9.49%; width: 80.4%; margin: 0; font-family: Inter, Arial, sans-serif; font-weight: 400; font-size: 18px; line-height: 30px; color: #fff; letter-spacing: 0; z-index: 2; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
-.person--portrait:hover .person__bio { opacity: 1; }
+.team-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(8px, 0.9vw, 12px); width: min(100%, 1680px); height: min(663px, calc(100svh - 175px)); max-height: 70svh; margin: 0 auto; }
+.person { position: relative; overflow: hidden; border-radius: clamp(20px, 2.2vw, 29px); background: linear-gradient(160deg, #32109a 0%, #6320d7 100%); cursor: pointer; transition: transform .35s ease, box-shadow .35s ease; }
+.person__top { z-index: 2; padding: clamp(18px, 5.7%, 38px) clamp(14px, 5%, 30px) 0; }
+.person h3 { position: relative; z-index: 2; margin: 0 0 clamp(6px, 1.2%, 10px); font-family: "Clash Display", Arial, sans-serif; font-weight: 600; font-size: clamp(16px, 1.55vw, 28px); line-height: 1.25; letter-spacing: 0; color: #fff; }
+.person__role { position: relative; z-index: 2; margin: 0; font-family: Inter, Arial, sans-serif; font-weight: 400; font-size: clamp(11px, 1vw, 18px); line-height: 1.55; color: #b7b7b7; }
+.person__bio { position: absolute; top: 32.73%; right: 9.49%; left: 9.49%; margin: 0; font-family: Inter, Arial, sans-serif; font-weight: 400; font-size: clamp(10px, 0.95vw, 18px); line-height: 1.67; color: #fff; opacity: 0; transition: opacity .4s ease; pointer-events: none; z-index: 2; }
+.person__photo { position: absolute; inset: 0; z-index: 1; pointer-events: none; transition: opacity .4s ease, transform .4s ease; }
+.person__photo img.person__portrait { position: absolute; bottom: 0; left: 50%; width: 100%; height: auto; transform: translateX(-50%) scale(0.96); transform-origin: bottom center; mix-blend-mode: lighten; }
+.person__photo img.person__placeholder { position: absolute; bottom: 0; left: 50%; width: 74%; height: auto; max-height: 58%; transform: translateX(-50%); object-fit: contain; object-position: bottom center; }
+.person--active .person__bio { opacity: 1; }
+.person--active .person__photo { opacity: 0; transform: translateY(18px); }
+@media (hover: hover) {
+  .person:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(98, 32, 215, .32); }
+  .person:hover .person__bio { opacity: 1; }
+  .person:hover .person__photo { opacity: 0; transform: translateY(18px); }
+}
 
 .footer { min-height: 100svh; padding-top: min(130px, 9svh); padding-bottom: min(52px, 4svh); background: #000; overflow: hidden; }
 .footer__top { display: grid; grid-template-columns: 1fr 1fr; align-items: start; border-bottom: 1px solid #251164; padding-bottom: min(38px, 3svh); }
@@ -197,9 +200,11 @@ a { color: inherit; text-decoration: none; }
   .timeline::before, .timeline::after { display: none; }
   .step { padding-top: 0; }
   .step::before { margin: 0 0 15px; }
-  .team-grid { grid-template-columns: repeat(2,1fr); }
-  .person { min-height: 310px; padding: 18px 15px; }
-  .person:nth-child(5) { grid-column: 1/-1; }
+  .team { gap: 28px; }
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); height: auto; max-height: none; gap: 12px; }
+  .person { aspect-ratio: 316 / 663; max-height: 360px; }
+  .person:nth-child(5) { grid-column: 1 / -1; max-width: min(100%, 360px); margin-inline: auto; }
+  .person__bio { top: 28%; font-size: 12px; line-height: 1.55; }
   .footer__art { display: none; }
   .footer__word { margin-top: 64px; }
   .ticker { justify-content: flex-start; overflow: hidden; gap: 24px; }
