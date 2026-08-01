@@ -13,12 +13,10 @@ export default function FooterSection() {
       <img className="footer__art" src="/assets/Mask Group 3@2x.png" alt="Illuminated Vertex mark" />
     </div>
     <div className="vertex-section">
-      <img className="vertex-image" src="/assets/Group 81@2x.png" alt="VERTEX" />
+      <img className="vertex-image vertex-image--sharp" src="/assets/Group 81@2x.png" alt="VERTEX" />
+      <img className="vertex-image vertex-image--blur" src="/assets/Group 81@2x.png" alt="" aria-hidden="true" />
       <div className="marquee-bar" aria-hidden="true">
-        <div className="marquee-bar__glow" />
-        <div className="marquee-bar__glass">
-          <div className="track">{[...tickerLabels, ...tickerLabels].flatMap((label, i) => [<span className="dot" key={`b${i}`} />, <span key={`t${i}`}>{label}</span>])}</div>
-        </div>
+        <div className="track">{[...tickerLabels, ...tickerLabels].flatMap((label, i) => [<span className="dot" key={`b${i}`} />, <span key={`t${i}`}>{label}</span>])}</div>
       </div>
     </div>
     <div className="footer__bottom">
