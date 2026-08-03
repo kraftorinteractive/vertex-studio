@@ -100,7 +100,6 @@ a { color: inherit; text-decoration: none; }
 
 .stats { overflow: hidden; background: linear-gradient(100deg, #7a2edb 0%, #2b0091 100%); }
 .stats__bg-shape { position: absolute; right: 0; bottom: 0; width: 41.4vw; height: 41.82vw; background-color: #2b0091; -webkit-mask: url('/assets/Group 43@2x.png') center / cover no-repeat; mask: url('/assets/Group 43@2x.png') center / cover no-repeat; mix-blend-mode: multiply; opacity: .41; z-index: 0; }
-.process::after { content: ''; position: absolute; right: -8%; bottom: -18%; width: 60%; height: 115%; border-radius: 56% 0 0 0; background: #12035e; opacity: .8; z-index: 0; }
 .stats__top, .stats__grid { position: relative; z-index: 1; }
 .stats__top { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(18px, 3svh, 30px); align-items: center; }
 .stats__top > div:first-child { grid-column: 1 / 4; }
@@ -136,21 +135,38 @@ a { color: inherit; text-decoration: none; }
 .mission { align-items: center; text-align: center; background: #000; }
 .mission__word { display: block; width: min(90%, 850px); height: auto; margin: 0 auto; }
 .mission p { max-width: 850px; margin: 34px auto 0; font-size: clamp(22px, 2.5vw, 36px); line-height: 1.27; color: #f1f1f1; letter-spacing: -.04em; }
-.process { overflow: hidden; background: #0c032d; }
+.process { overflow: hidden; background: #050114; position: relative; }
+.process__bg-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  max-width: 60%;
+  object-fit: cover;
+  object-position: left center;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  filter: brightness(0.7) contrast(1.1);
+}
 .process__intro, .timeline { position: relative; z-index: 1; }
 .process__intro h2 { font-size: clamp(42px, 4.7vw, 64px); line-height: 1.03; letter-spacing: -.01em; }
 .process__intro .muted { max-width: 650px; font-size: 14px; }
-.timeline { display: grid; grid-template-columns: repeat(4,1fr); gap: 6%; margin-top: clamp(28px, 5svh, 66px); }
-.timeline::before { content: ''; position: absolute; top: 0; right: 20.1%; left: 0; height: 1px; background: #4c23b5; }
-.timeline::after { content: ''; position: absolute; top: 0; left: 0; width: 5%; height: 4px; border-radius: 999px; background: linear-gradient(90deg, transparent, #b98bff 70%, #f4edff); filter: blur(1px); box-shadow: 0 0 6px 1px rgba(185, 139, 255, .65); pointer-events: none; animation: timeline-flow 3.8s ease-in-out infinite; will-change: transform; }
-@keyframes timeline-flow { 0% { transform: translate(0%, -1.5px); opacity: 0; } 8% { opacity: 1; } 85% { opacity: 1; } 95%, 100% { transform: translate(1502%, -1.5px); opacity: 0; } }
-.step { padding-top: 28px; }
-.step::before { content: ''; display: block; width: 12px; height: 12px; margin-top: -35px; margin-bottom: 24px; border-radius: 50%; background: #6424e6; box-shadow: 0 0 12px #9e76ff; animation: dot-pulse 4s ease-in-out infinite; }
-.step:nth-child(1)::before { animation-delay: 0s; }
-.step:nth-child(2)::before { animation-delay: .48s; }
-.step:nth-child(3)::before { animation-delay: .96s; }
-.step:nth-child(4)::before { animation-delay: 1.44s; }
-@keyframes dot-pulse { 0%, 82%, 100% { box-shadow: 0 0 12px #9e76ff; transform: scale(1); } 91% { box-shadow: 0 0 22px #b98bff, 0 0 42px rgba(158,118,255,.6); transform: scale(1.2); } }
+.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6%; margin-top: clamp(28px, 5svh, 66px); position: relative; }
+.timeline::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: rgba(122, 46, 219, 0.4); }
+.step { padding-top: 28px; position: relative; }
+.step::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-top: -34px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: #7A2EDB;
+  box-shadow: 0 0 10px rgba(122, 46, 219, 0.6);
+}
 .step h3 { margin: 0 0 12px; font-size: 21px; letter-spacing: -.01em; }
 .step p { margin: 0; color: #bab6c9; font-size: 14px; line-height: 1.45; }
 .team { background-color: #030303; justify-content: center; gap: clamp(12px, 2svh, 36px); overflow: hidden; padding-top: clamp(60px, 8svh, 96px); padding-bottom: clamp(20px, 3svh, 44px); }

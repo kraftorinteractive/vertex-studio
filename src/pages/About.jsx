@@ -40,7 +40,22 @@ export default function About() {
                   </div>
                 </section>
                 <section className="section mission"><img className="mission__word" src="/assets/Group 95@2x.png" alt="Mission Vision" /><p>To create purposeful design solutions that inspire confidence, strengthen brands, and deliver measurable business impact through creativity, innovation, and collaboration.</p></section>
-                <section className="section process"><div className="process__intro"><p className="eyebrow">Our Approach</p><h2 className="display">Thoughtful Process.<br />Exceptional Outcomes.</h2><p className="muted">We take the time to learn about your business, your users, and your goals before crafting solutions that are strategic, scalable, and purpose-driven.</p></div><div className="timeline">{steps.map(([title, text]) => <div className="step" key={title}><h3>{title}</h3><p>{text}</p></div>)}</div></section>
+                <section className="section process">
+                  <img className="process__bg-img" src="/assets/Group 43@2x.png" alt="" aria-hidden="true" />
+                  <div className="process__intro">
+                    <p className="eyebrow">Our Approach</p>
+                    <h2 className="display">Thoughtful Process.<br />Exceptional Outcomes.</h2>
+                    <p className="muted">We take the time to learn about your business, your users, and your goals before crafting solutions that are strategic, scalable, and purpose-driven.</p>
+                  </div>
+                  <div className="timeline">
+                    {steps.map(([title, text]) => (
+                      <div className="step" key={title}>
+                        <h3>{title}</h3>
+                        <p>{text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
                 <section className="section team grid-bg">
                     <div className="team__head">
                         <p className="eyebrow">Meet Our Experts</p>
