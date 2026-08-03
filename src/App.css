@@ -162,75 +162,56 @@ a { color: inherit; text-decoration: none; }
   .person:hover .person__photo { opacity: 0; transform: translateY(18px); }
 }
 
-/* --- Footer Part 1: CTA Section (Matching Image 2 Exactly) --- */
-.footer-cta {
+/* --- Footer Section Styles (Unified Native Scroll Flow) --- */
+.footer {
   min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #000;
-  padding: 0 min(40px, 4vw);
-  overflow: hidden;
-}
-.footer-cta .footer__top {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  align-items: center;
-  gap: clamp(30px, 4vw, 60px);
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-.footer-cta h2 {
-  font-size: clamp(38px, 4.4vw, 68px);
-  line-height: 1.04;
-  letter-spacing: -.02em;
-}
-.footer-cta .muted {
-  max-width: 520px;
-  margin: 20px 0 32px;
-  font-size: clamp(14px, 1.1vw, 16px);
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.55;
-}
-.footer__art {
-  width: 100%;
-  height: clamp(380px, 62svh, 680px);
-  max-width: none;
-  justify-self: end;
-  align-self: center;
-  object-fit: contain;
-  mix-blend-mode: screen;
-}
-
-/* --- Footer Part 2: Full-Screen Main VERTEX Footer (Image 2) --- */
-.footer-main {
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #000;
-  padding: min(60px, 6svh) min(32px, 3vw) min(24px, 3svh);
   position: relative;
   overflow: hidden;
-}
-.footer-main__container {
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 85svh;
 }
-.footer-main .vertex-section {
+
+/* Top Part (Image 1): CTA Block with Background Image on Right 50% */
+.footer__cta-block {
   position: relative;
-  overflow: hidden;
-  height: clamp(220px, 42svh, 520px);
-  margin: auto 0;
+  min-height: 76svh;
+  display: flex;
+  align-items: center;
+  padding: min(80px, 8svh) var(--page-padding) min(40px, 4svh);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+.footer__art-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+.footer__cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+}
+.footer h2 { font-size: clamp(36px, 4.4vw, 64px); line-height: 1.04; letter-spacing: -.02em; }
+.footer__cta-content .muted { max-width: 490px; margin: 18px 0 28px; font-size: 15px; color: rgba(255, 255, 255, 0.7); line-height: 1.55; }
+
+/* Bottom Part (Image 2): VERTEX Logo + Copyright Links */
+.footer__main-block {
+  min-height: 65svh;
+  padding: min(40px, 4svh) 0 min(20px, 2svh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.vertex-section { position: relative; overflow: hidden; flex: 1 1 auto; height: clamp(120px, min(32vw, 24svh), 580px); min-height: clamp(100px, min(24vw, 18svh), 280px); max-height: 580px; margin: clamp(12px, 1.6svh, 40px) 0 clamp(8px, 1.1svh, 28px); }
 .vertex-image { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(98vw, 1360px); height: auto; pointer-events: none; }
 .vertex-image--sharp { z-index: 2; clip-path: inset(0 0 50% 0); -webkit-clip-path: inset(0 0 50% 0); }
 .vertex-image--blur { z-index: 1; clip-path: inset(50% 0 0 0); -webkit-clip-path: inset(50% 0 0 0); filter: blur(14px) saturate(1.15); opacity: .92; -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.85) 0%, rgba(0,0,0,.45) 45%, transparent 100%); mask-image: linear-gradient(to bottom, rgba(0,0,0,.85) 0%, rgba(0,0,0,.45) 45%, transparent 100%); }
@@ -242,7 +223,7 @@ a { color: inherit; text-decoration: none; }
 .track .dot { width: 3px; height: 3px; flex: none; border-radius: 50%; background: rgba(255, 255, 255, 0.3); margin-top: 1px; }
 @keyframes ticker-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-.footer__bottom { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; width: 100%; }
+.footer__bottom { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 var(--page-padding); }
 .footer__identity { display: flex; gap: 20px; align-items: center; }
 .footer__brand { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .footer__brand-icon { display: block; width: 28px; height: 14.2px; background: linear-gradient(135deg, #7a2edb, #2b0091); -webkit-mask: url('/assets/Group 19.svg') center / contain no-repeat; mask: url('/assets/Group 19.svg') center / contain no-repeat; }
