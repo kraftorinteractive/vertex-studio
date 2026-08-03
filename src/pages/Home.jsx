@@ -31,6 +31,7 @@ function HeroVideo() {
   return <div className="hero__video-wrap" aria-hidden="true">
     <video ref={firstVideo} className={`hero__video ${visibleVideo === 0 ? 'hero__video--visible' : ''}`} muted playsInline preload="auto" onTimeUpdate={() => crossfadeBeforeRestart(0)}><source src="/video.mp4" type="video/mp4" /></video>
     <video ref={secondVideo} className={`hero__video ${visibleVideo === 1 ? 'hero__video--visible' : ''}`} muted playsInline preload="auto" onTimeUpdate={() => crossfadeBeforeRestart(1)}><source src="/video.mp4" type="video/mp4" /></video>
+    <img className="hero__overlay-img" src={`${assets}Group 16@2x.png`} alt="" aria-hidden="true" />
   </div>;
 }
 
