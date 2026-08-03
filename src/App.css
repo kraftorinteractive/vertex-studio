@@ -105,12 +105,12 @@ a { color: inherit; text-decoration: none; }
 .work__layout { display: grid; grid-template-columns: 0.48fr 0.52fr; align-items: center; gap: 6%; }
 .work__copy h2 { font-size: clamp(42px, 5vw, 68px); line-height: .96; letter-spacing: .01em; }
 .work__copy .muted { max-width: 430px; margin: 15px 0 25px; color: #999; }
-.work__masonry { height: clamp(380px, 70svh, 620px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; overflow: hidden; mask-image: linear-gradient(180deg, transparent, black 6%, black 94%, transparent); }
+.work__masonry { height: clamp(520px, 82svh, 780px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; overflow: hidden; mask-image: linear-gradient(180deg, transparent, black 6%, black 94%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, black 6%, black 94%, transparent); }
 .work__column { overflow: hidden; }
 .work__track { display: grid; gap: 18px; animation: work-marquee 32s linear infinite; }
 .work__track--b { animation-duration: 38s; animation-direction: reverse; }
-.work-card { min-height: 205px; overflow: hidden; border-radius: 22px; background: white; box-shadow: 0 12px 25px rgba(0,0,0,.1); }
-.work-card img { width: 100%; height: 100%; min-height: 205px; object-fit: cover; display: block; }
+.work-card { min-height: 205px; overflow: hidden; border-radius: 22px; background: white; box-shadow: none; }
+.work-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 @keyframes work-marquee { from { transform: translateY(0); } to { transform: translateY(-50%); } }
 
 /* About */
@@ -216,7 +216,7 @@ a { color: inherit; text-decoration: none; }
   .stats__logo { display: none; }
   .stats__grid { grid-template-columns: repeat(2,1fr); gap: 40px 15px; margin-top: 52px; }
   .work__layout { gap: 45px; }
-  .work__masonry { height: 490px; }
+  .work__masonry { height: 560px; }
   .about-hero__image { width: auto; max-width: 100%; max-height: 20svh; margin: 0 0 12px; }
   .about-hero__layout { gap: 0; }
   .about-hero h1 { font-size: clamp(22px, 7.2vw, 34px); }
