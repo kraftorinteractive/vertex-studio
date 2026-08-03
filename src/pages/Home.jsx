@@ -132,7 +132,7 @@ export default function Home() {
     navigationPosition="right"
     responsiveWidth={800}
     credits={{ enabled: false }}
-    anchors={['hero', 'services', 'stats', 'work', 'contact']}
+    anchors={['hero', 'services', 'stats', 'work', 'cta', 'footer']}
     render={() => <ReactFullpage.Wrapper>
       <section className="section hero">
         <Navbar scoped />
