@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import emailjs from '@emailjs/browser';
 import Navbar from '../components/Navbar';
 import FooterSection from '../components/FooterSection';
@@ -219,13 +220,41 @@ const disposableEmailDomains = [
 function CountrySelect({ selectedCode, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
+  const [dropdownPos, setDropdownPos] = useState({ top: 0, left: 0, width: 290 });
+  const triggerRef = useRef(null);
   const dropdownRef = useRef(null);
 
   const selectedCountry = countryCodes.find((c) => c.code === selectedCode) || countryCodes[0];
 
+  const updatePosition = () => {
+    if (triggerRef.current) {
+      const rect = triggerRef.current.getBoundingClientRect();
+      setDropdownPos({
+        top: rect.bottom + window.scrollY + 4,
+        left: rect.left + window.scrollX,
+        width: Math.max(290, rect.width)
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      updatePosition();
+      window.addEventListener('resize', updatePosition);
+      window.addEventListener('scroll', updatePosition, true);
+    }
+    return () => {
+      window.removeEventListener('resize', updatePosition);
+      window.removeEventListener('scroll', updatePosition, true);
+    };
+  }, [isOpen]);
+
   useEffect(() => {
     function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (
+        triggerRef.current && !triggerRef.current.contains(event.target) &&
+        dropdownRef.current && !dropdownRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
       }
     }
@@ -241,8 +270,9 @@ function CountrySelect({ selectedCode, onChange }) {
   );
 
   return (
-    <div className="custom-country-select" ref={dropdownRef}>
+    <div className="custom-country-select">
       <button
+        ref={triggerRef}
         type="button"
         className="custom-country-trigger"
         onClick={() => setIsOpen(!isOpen)}
@@ -251,8 +281,18 @@ function CountrySelect({ selectedCode, onChange }) {
         <span className="custom-country-arrow">▾</span>
       </button>
 
-      {isOpen && (
-        <div className="custom-country-dropdown" data-normal-scroll="true">
+      {isOpen && createPortal(
+        <div
+          ref={dropdownRef}
+          className="custom-country-portal-dropdown"
+          style={{
+            position: 'absolute',
+            top: `${dropdownPos.top}px`,
+            left: `${dropdownPos.left}px`,
+            width: `${dropdownPos.width}px`,
+          }}
+          data-normal-scroll="true"
+        >
           <div className="custom-country-search-wrap">
             <input
               type="text"
@@ -288,7 +328,8 @@ function CountrySelect({ selectedCode, onChange }) {
               ))
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
@@ -396,8 +437,7 @@ export default function Contact() {
             <div className="contact-page__container">
               <div className="contact-page__info">
                 <h1 className="display">
-                  Let's Build<br />
-                  Something<br />
+                  <span style={{ whiteSpace: 'nowrap' }}>Let's Build Something</span><br />
                   <span style={{ color: '#FF5C00' }}>Remarkable.</span>
                 </h1>
                 <p className="muted">
