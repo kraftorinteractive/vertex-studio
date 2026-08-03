@@ -69,7 +69,14 @@ a { color: inherit; text-decoration: none; }
 }
 .hero h1 { font-size: clamp(36px, 3.5vw, 46px); font-weight: 700; line-height: 1.08; letter-spacing: .01em; }
 .hero .muted { max-width: 560px; margin: 20px auto 22px; color: #d0c8dd; font-size: clamp(13px, .95vw, 15px); line-height: 1.45; }
-.hero .button--outline { border-color: var(--orange); }
+.hero .button--outline {
+  border: 1.5px solid var(--orange);
+  padding: 14px 32px 14px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
 .hero .button--outline .arrow { color: var(--orange); }
 .hero__clients { position: absolute; right: 0; bottom: 4px; left: 0; height: 160px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent); }
 .hero__clients-track { display: flex; align-items: center; gap: 110px; width: max-content; animation: hero-clients-scroll 45s linear infinite; }
