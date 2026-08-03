@@ -63,7 +63,7 @@ const services = [
   ['Group 31.svg', 'Social Media Design', 'Creative visual content designed to increase engagement and consistency.'],
   ['Group 34.svg', 'Website Design & Development', 'Modern, responsive websites built for performance and growth.'],
   ['Group 36.svg', 'Design Consultation', 'Helping businesses make better design decisions with strategic guidance.'],
-  ['Group 38.svg', 'Video Editing', 'Short-form videos to grab attention and boost engagement.'],
+  ['Group 38.svg', 'Videography and Editing', 'High-quality videography and short-form videos to grab attention and boost engagement.'],
 ];
 const workLeft = [
   ['Free_Doypack_Mockup_2@2x.png', 'Akiya packaging design'],

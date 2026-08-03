@@ -14,7 +14,7 @@ const availableServices = [
   'Social Media Design',
   'Website Design & Development',
   'Design Consultation',
-  'Video Editing',
+  'Videography and Editing',
 ];
 
 const countryCodes = [
