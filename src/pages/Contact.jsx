@@ -396,8 +396,9 @@ export default function Contact() {
             <div className="contact-page__container">
               <div className="contact-page__info">
                 <h1 className="display">
-                  Let's Build Something<br />
-                  <span style={{ color: '#ff8c36' }}>Remarkable.</span>
+                  Let's Build<br />
+                  Something<br />
+                  <span style={{ color: '#FF5C00' }}>Remarkable.</span>
                 </h1>
                 <p className="muted">
                   Whether you're launching a startup, refreshing your brand, or scaling your digital presence, we're ready to help.
@@ -519,7 +520,7 @@ export default function Contact() {
                   <label className="contact-form__label">Project Details *</label>
                   <textarea
                     className="contact-form__textarea"
-                    rows="3"
+                    rows="2"
                     placeholder="Tell us about your goals, timeline, and budget..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
@@ -532,7 +533,8 @@ export default function Contact() {
                   className="button button--violet contact-form__submit"
                   disabled={status.loading}
                 >
-                  {status.loading ? 'Sending...' : 'Send Message'} <span className="arrow">↗</span>
+                  <span>{status.loading ? 'Sending...' : 'Send Message'}</span>
+                  <img className="button__arrow-icon" src="/assets/Group 51.svg" alt="" aria-hidden="true" />
                 </button>
               </form>
             </div>
