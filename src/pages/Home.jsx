@@ -70,6 +70,9 @@ const workLeft = [
   ['REPLACE THIS SCREEN111121117111111111@2x.png', 'Brand collateral'],
   ['WhatsApp Image 2024-09-24 at 23.55.49_01c0c17b@2x.png', 'Brand collateral'],
   ['O-morning star tea 2@2x.png', 'Morning Star Tea packaging'],
+  ['Free_Billboard_Mockup_1 copy@2x.png', 'Billboard design mockup'],
+  ['Mockup Dropper T 2@2x.png', 'Dropper bottle packaging design'],
+  ['Mockups (4)-1@2x.png', 'Brand identity mockup'],
 ];
 const workRight = [
   ['Marigold Mystique Front@2x.png', 'Marigold Mystique packaging'],
@@ -77,6 +80,9 @@ const workRight = [
   ['Mockups 4@2x.png', 'Brand mockup'],
   ['Cold brew@2x.png', 'Cold brew packaging'],
   ['OG Mockup@2x.png', 'Brand mockup'],
+  ['Mockups (4)@2x.png', 'Product packaging mockup'],
+  ['Mockups 4-1@2x.png', 'Brand collateral mockup'],
+  ['Mockups 5@2x.png', 'Brand stationery design'],
 ];
 
 function AnimatedStat({ targetValue, label }) {
