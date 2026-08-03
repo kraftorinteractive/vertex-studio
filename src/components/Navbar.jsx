@@ -17,42 +17,19 @@ export default function Navbar({ scoped = false }) {
     <Link to="/" aria-label="Vertex Studio home"><img className="brand-mark" src="/assets/Group 19.svg" alt="" /></Link>
     <nav className="topnav" aria-label="Main navigation">
       <Link to="/about" aria-current={pathname === '/about' ? 'page' : undefined}>About</Link>
-      {pathname === '/' ? (
-        <>
-          <a href="#work">Portfolio</a>
-          <a href="#contact">Contact</a>
-        </>
-      ) : (
-        <>
-          <Link to="/#work">Portfolio</Link>
-          <Link to="/#contact">Contact</Link>
-        </>
-      )}
+      <Link to="/#work">Portfolio</Link>
+      <Link to="/contact" aria-current={pathname === '/contact' ? 'page' : undefined}>Contact</Link>
     </nav>
-    {pathname === '/' ? (
-      <a className="consultation" href="#contact">Free Consultation</a>
-    ) : (
-      <Link className="consultation" to="/#contact">Free Consultation</Link>
-    )}
+    <Link className="consultation" to="/contact">Free Consultation</Link>
     <button type="button" className={`menu-toggle ${menuOpen ? 'menu-toggle--open' : ''}`} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(o => !o)}>
       <span /><span /><span />
     </button>
     {createPortal(
       <nav className={`mobile-nav ${menuOpen ? 'mobile-nav--open' : ''}`} aria-label="Mobile navigation">
         <Link to="/about" aria-current={pathname === '/about' ? 'page' : undefined}>About</Link>
-        {pathname === '/' ? (
-          <>
-            <a href="#work" onClick={() => setMenuOpen(false)}>Portfolio</a>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-            <a className="mobile-nav__cta" href="#contact" onClick={() => setMenuOpen(false)}>Free Consultation</a>
-          </>
-        ) : (
-          <>
-            <Link to="/#work" onClick={() => setMenuOpen(false)}>Portfolio</Link>
-            <Link to="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-            <Link className="mobile-nav__cta" to="/#contact" onClick={() => setMenuOpen(false)}>Free Consultation</Link>
-          </>
-        )}
+        <Link to="/#work" onClick={() => setMenuOpen(false)}>Portfolio</Link>
+        <Link to="/contact" aria-current={pathname === '/contact' ? 'page' : undefined} onClick={() => setMenuOpen(false)}>Contact</Link>
+        <Link className="mobile-nav__cta" to="/contact" onClick={() => setMenuOpen(false)}>Free Consultation</Link>
       </nav>,
       document.body
     )}
