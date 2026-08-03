@@ -1,18 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122 122">
-  <style>
-    path {
-      fill: #000000;
-    }
-    @media (prefers-color-scheme: dark) {
-      path {
-        fill: #ffffff;
-      }
-    }
-  </style>
-  <g transform="translate(0 30)">
-    <g transform="translate(-140 -66.643)">
-      <path d="M5,5.1l.015,61.844L30.1,66.9A53.043,53.043,0,0,1,40.771,49.055a58.552,58.552,0,0,1,25.538-18.3L66.237,7.511C50.7,11.455,37.515,19.963,26.819,31.847L26.627,5Z" transform="translate(135.001 61.642)"/>
-      <path d="M148.882,5.044A53.032,53.032,0,0,1,138.2,22.892a58.544,58.544,0,0,1-25.538,18.3l.072,23.239c15.534-3.943,28.722-12.451,39.417-24.335l.193,26.846,21.628-.1L173.962,5Z" transform="translate(88.023 61.642)"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="91" height="91" viewBox="0 0 91 91">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.095" y2="1.121" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2b0091"/>
+      <stop offset="1" stop-color="#7a2edb"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_126" data-name="Group 126" transform="translate(34 417)">
+    <rect id="Rectangle_94" data-name="Rectangle 94" width="91" height="91" rx="12" transform="translate(-34 -417)" fill="url(#linear-gradient)"/>
+    <g id="Group_125" data-name="Group 125" transform="translate(-165 -456.643)">
+      <path id="Path_1" data-name="Path 1" d="M5,5.061l.009,37.065L20.04,42.1a31.79,31.79,0,0,1,6.4-10.7A35.092,35.092,0,0,1,41.744,20.433L41.7,6.505A47.154,47.154,0,0,0,18.077,21.09L17.961,5Z" transform="translate(135.001 61.642)" fill="#fff"/>
+      <path id="Path_2" data-name="Path 2" d="M134.371,5.027a31.784,31.784,0,0,1-6.4,10.7,35.087,35.087,0,0,1-15.306,10.97l.043,13.928a47.148,47.148,0,0,0,23.624-14.585l.116,16.09,12.962-.061L149.4,5Z" transform="translate(63.706 61.642)" fill="#fff"/>
     </g>
   </g>
 </svg>
