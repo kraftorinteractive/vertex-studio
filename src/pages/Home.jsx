@@ -43,7 +43,17 @@ const clientLogos = [
   ['Group 99@2x.png', 'Honeydew Kingdom'],
   ['Rectangle 88@2x.png', 'HC'],
   ['Rectangle 89@2x.png', 'Kaashie'],
-  ['White@2x.png', 'MindNMuscl'],
+  ['Rectangle 90@2x.png', 'MindNMuscl'],
+  ['Rectangle 91@2x.png', 'Rectangle 91'],
+  ['Group 100@2x.png', 'Group 100'],
+  ['Group 101@2x.png', 'Group 101'],
+  ['Group 104@2x.png', 'Group 104'],
+  ['Group 105@2x.png', 'Group 105'],
+  ['Group 115@2x.png', 'Group 115'],
+  ['Group 118@2x.png', 'Group 118'],
+  ['White@2x.png', 'White Logo'],
+  ['Asset 1@2x@2x.png', 'Asset Logo'],
+  ['Black Logo on White BG@2x.png', 'Black Logo'],
 ];
 const services = [
   ['Group 25.svg', 'Brand Identity', 'Distinctive branding that builds recognition and trust.'],
@@ -144,7 +154,13 @@ export default function Home() {
           <a href="#work" className="button button--outline">View Our Work <span className="arrow">↗</span></a>
         </div>
         <div className="hero__clients" aria-label="Selected clients">
-          {clientLogos.map(([file, name], index) => <div className="hero__client" key={name} style={{ '--client-delay': `${-((clientLogos.length - 1 - index) * 3.5)}s` }}><img src={`${assets}${file}`} alt={name} /></div>)}
+          <div className="hero__clients-track">
+            {[...clientLogos, ...clientLogos].map(([file, name], index) => (
+              <div className="hero__client-item" key={`${file}-${index}`}>
+                <img src={`${assets}${file}`} alt={name} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
