@@ -98,8 +98,21 @@ a { color: inherit; text-decoration: none; }
 .service-card h3 { margin: 0 0 10px; font-size: 20px; letter-spacing: -.01em; }
 .service-card p { margin: 0; color: #aaa; font-size: 14px; line-height: 1.45; }
 
-.stats { overflow: hidden; background: linear-gradient(100deg, #7a2edb 0%, #2b0091 100%); }
-.stats__bg-shape { position: absolute; right: 0; bottom: 0; width: 41.4vw; height: 41.82vw; background-color: #2b0091; -webkit-mask: url('/assets/Group 43@2x.png') center / cover no-repeat; mask: url('/assets/Group 43@2x.png') center / cover no-repeat; mix-blend-mode: multiply; opacity: .41; z-index: 0; }
+.stats { overflow: hidden; background: linear-gradient(100deg, #7a2edb 0%, #2b0091 100%); position: relative; }
+.stats__bg-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  max-width: 60%;
+  object-fit: cover;
+  object-position: left center;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  filter: brightness(0.7) contrast(1.1);
+}
 .stats__top, .stats__grid { position: relative; z-index: 1; }
 .stats__top { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(18px, 3svh, 30px); align-items: center; }
 .stats__top > div:first-child { grid-column: 1 / 4; }

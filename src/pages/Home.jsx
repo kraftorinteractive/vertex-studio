@@ -189,7 +189,7 @@ export default function Home() {
       </section>
 
       <section className="section stats">
-        <div className="stats__bg-shape" aria-hidden="true" />
+        <img className="stats__bg-img" src={`${assets}Group 43@2x.png`} alt="" aria-hidden="true" />
         <div className="stats__top">
           <div><p className="eyebrow">Why Vertex Studio</p><h2 className="display">Experience.<br />Strategy. Precision.</h2><p className="muted">Every project is approached with research, strategy, and attention to detail, ensuring every solution serves both users and business goals.</p></div>
           <div className="stats__logo"><img className="stats__logo-word" src={`${assets}Group 55.svg`} alt="Vertex Studio" /></div>
