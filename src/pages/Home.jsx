@@ -176,7 +176,10 @@ export default function Home() {
           <div className="services__copy">
             <h2>End-to-End Creative Solutions</h2>
             <p className="muted">From brand identity to digital experiences, we design solutions that connect businesses with their audience and create lasting impact.</p>
-            <a href="#work" className="button button--violet">View Our Work <span className="arrow">↗</span></a>
+            <a href="#work" className="button button--violet">
+              <span>View Our Work</span>
+              <img className="button__arrow-icon" src={`${assets}Group 51.svg`} alt="" aria-hidden="true" />
+            </a>
           </div>
         </div>
         <div className="service-grid">
@@ -195,7 +198,15 @@ export default function Home() {
 
       <section className="section work">
         <div className="work__layout">
-          <div className="work__copy"><p className="eyebrow">Selected Work</p><h2 className="display">Crafted with Purpose.</h2><p className="muted">Every project reflects our commitment to thoughtful design, usability, and measurable business value.</p><a className="button button--violet" href="#contact">View Our Work <span className="arrow">↗</span></a></div>
+          <div className="work__copy">
+            <p className="eyebrow">Selected Work</p>
+            <h2 className="display">Crafted with Purpose.</h2>
+            <p className="muted">Every project reflects our commitment to thoughtful design, usability, and measurable business value.</p>
+            <a className="button button--violet" href="#contact">
+              <span>View Our Work</span>
+              <img className="button__arrow-icon" src={`${assets}Group 51.svg`} alt="" aria-hidden="true" />
+            </a>
+          </div>
           <div className="work__masonry" aria-label="Selected work">
             <div className="work__column"><div className="work__track">{[...workLeft, ...workLeft].map(([file, alt], i) => <div className="work-card" key={i}><img src={`${assets}${file}`} alt={alt} /></div>)}</div></div>
             <div className="work__column"><div className="work__track work__track--b">{[...workRight, ...workRight].map(([file, alt], i) => <div className="work-card" key={i}><img src={`${assets}${file}`} alt={alt} /></div>)}</div></div>
