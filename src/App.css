@@ -114,12 +114,13 @@ a { color: inherit; text-decoration: none; }
 @keyframes work-marquee { from { transform: translateY(0); } to { transform: translateY(-50%); } }
 
 /* About */
-.about-hero { min-height: 100svh; background: #000; display: flex; align-items: center; position: relative; overflow: hidden; }
-.about-hero__layout { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: clamp(20px, 3vw, 50px); width: 100%; max-width: 100%; padding: 0 min(40px, 3vw) 0 0; }
-.about-hero__image { width: 135%; max-width: none; height: clamp(440px, 84svh, 880px); margin-left: -32%; object-fit: contain; mix-blend-mode: screen; }
+.about-hero { min-height: 100svh; background: #000; position: relative; overflow: hidden; display: flex; align-items: center; }
+.about-hero__bg-art { position: absolute; left: 0; top: 0; bottom: 0; width: 50vw; height: 100svh; object-fit: contain; object-position: left center; mix-blend-mode: screen; pointer-events: none; z-index: 1; }
+.about-hero__container { width: 100%; max-width: 100%; padding: 0 var(--page-padding); display: grid; grid-template-columns: 1fr 1fr; align-items: center; position: relative; z-index: 2; }
+.about-hero__text { grid-column: 2; max-width: 620px; }
 .about-hero h1 { font-size: clamp(30px, 3.6vw, 60px); line-height: 1.05; letter-spacing: -.01em; white-space: nowrap; }
-.about-hero .muted { max-width: 620px; margin-top: clamp(12px, 3svh, 28px); font-size: 14px; }
-.about-hero .muted p { margin: 0 0 20px; }
+.about-hero .muted { margin-top: clamp(16px, 3svh, 28px); font-size: 14px; }
+.about-hero .muted p { margin: 0 0 18px; line-height: 1.55; }
 .mission { align-items: center; text-align: center; background: #000; }
 .mission__word { display: block; width: min(90%, 850px); height: auto; margin: 0 auto; }
 .mission p { max-width: 850px; margin: 34px auto 0; font-size: clamp(22px, 2.5vw, 36px); line-height: 1.27; color: #f1f1f1; letter-spacing: -.04em; }
