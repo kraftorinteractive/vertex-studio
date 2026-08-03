@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const tickerLabels = ['Logo Design', 'Visual Identity', 'Website Development', 'Digital Marketing Assets', 'Packaging Design', 'Brochures'];
 
 export default function FooterSection() {
-  return <section className="section footer" id="contact">
+  return <section className="section footer">
     <div className="footer__top">
       <div>
         <h2 className="display">Let's Build Something<br /><span style={{ color: '#ff8c36' }}>Remarkable.</span></h2>

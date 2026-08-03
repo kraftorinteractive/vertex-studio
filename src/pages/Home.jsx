@@ -76,6 +76,7 @@ export default function Home() {
     navigationPosition="right"
     responsiveWidth={800}
     credits={{ enabled: false }}
+    anchors={['hero', 'services', 'stats', 'work', 'contact']}
     render={() => <ReactFullpage.Wrapper>
       <section className="section hero">
         <Navbar scoped />
@@ -114,7 +115,7 @@ export default function Home() {
         <div className="stats__grid">{[['10+', 'Years of Experience'], ['100+', 'Projects Delivered'], ['20+', 'Industries Served'], ['98%', 'Client Satisfaction']].map(([value, label]) => <div className="stat" key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>
       </section>
 
-      <section className="section work" id="work">
+      <section className="section work">
         <div className="work__layout">
           <div className="work__copy"><p className="eyebrow">Selected Work</p><h2 className="display">Crafted with Purpose.</h2><p className="muted">Every project reflects our commitment to thoughtful design, usability, and measurable business value.</p><a className="button button--violet" href="#contact">View Our Work <span className="arrow">↗</span></a></div>
           <div className="work__masonry" aria-label="Selected work">
