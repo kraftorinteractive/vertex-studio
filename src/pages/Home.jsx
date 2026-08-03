@@ -11,7 +11,7 @@ function HeroVideo() {
   const transitionInProgress = useRef(false);
   const [visibleVideo, setVisibleVideo] = useState(0);
 
-  useEffect(() => { firstVideo.current?.play().catch(() => {}); }, []);
+  useEffect(() => { firstVideo.current?.play().catch(() => { }); }, []);
 
   const crossfadeBeforeRestart = (index) => {
     const currentVideo = index === 0 ? firstVideo.current : secondVideo.current;
@@ -19,7 +19,7 @@ function HeroVideo() {
     if (!currentVideo || !nextVideo || transitionInProgress.current || !Number.isFinite(currentVideo.duration) || currentVideo.duration - currentVideo.currentTime > 0.75) return;
     transitionInProgress.current = true;
     nextVideo.currentTime = 0;
-    nextVideo.play().catch(() => {});
+    nextVideo.play().catch(() => { });
     setVisibleVideo(index === 0 ? 1 : 0);
     window.setTimeout(() => {
       currentVideo.pause();
@@ -36,14 +36,14 @@ function HeroVideo() {
 
 const assets = '/assets/';
 const clientLogos = [
-  ['White transparent@2x.png', 'Akiya'],
-  ['Group 21@2x.png', 'Arick Imperial'],
-  ['Choicos Choice - White on Blue0@2x.png', "Chicco's Choice"],
-  ['Group 23@2x.png', 'Fraichelle'],
-  ['Light@2x.png', 'Honeydew Kingdom'],
-  ['HC Logo Negative@2x.png', 'HC'],
-  ['White@2x.png', 'Kaashie'],
-  ['White-1@2x.png', 'MindNMuscl'],
+  ['Rectangle 83@2x.png', 'Akiya'],
+  ['Group 97@2x.png', 'Arick Imperial'],
+  ['Rectangle 85@2x.png', "Chicco's Choice"],
+  ['Group 98@2x.png', 'Fraichelle'],
+  ['Group 99@2x.png', 'Honeydew Kingdom'],
+  ['Rectangle 88@2x.png', 'HC'],
+  ['Rectangle 89@2x.png', 'Kaashie'],
+  ['White@2x.png', 'MindNMuscl'],
 ];
 const services = [
   ['Group 25.svg', 'Brand Identity', 'Distinctive branding that builds recognition and trust.'],
@@ -68,6 +68,62 @@ const workRight = [
   ['Cold brew@2x.png', 'Cold brew packaging'],
   ['OG Mockup@2x.png', 'Brand mockup'],
 ];
+
+function AnimatedStat({ targetValue, label }) {
+  const [displayValue, setDisplayValue] = useState(0);
+  const [suffix, setSuffix] = useState('');
+  const statRef = useRef(null);
+  const hasAnimatedRef = useRef(false);
+
+  useEffect(() => {
+    const match = targetValue.match(/^(\d+)(.*)$/);
+    if (!match) return;
+    const targetNum = parseInt(match[1], 10);
+    const suf = match[2] || '';
+    setSuffix(suf);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimatedRef.current) {
+            hasAnimatedRef.current = true;
+            const duration = 1800;
+            const startTime = performance.now();
+
+            const animate = (now) => {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const easeOut = 1 - Math.pow(1 - progress, 3);
+              const current = Math.floor(easeOut * targetNum);
+              setDisplayValue(current);
+
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              } else {
+                setDisplayValue(targetNum);
+              }
+            };
+            requestAnimationFrame(animate);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    if (statRef.current) {
+      observer.observe(statRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [targetValue]);
+
+  return (
+    <div className="stat" ref={statRef}>
+      <strong>{hasAnimatedRef.current || displayValue > 0 ? `${displayValue}${suffix}` : `0${suffix}`}</strong>
+      <span>{label}</span>
+    </div>
+  );
+}
 
 export default function Home() {
   return <ReactFullpage
@@ -112,7 +168,7 @@ export default function Home() {
           <div><p className="eyebrow">Why Vertex Studio</p><h2 className="display">Experience.<br />Strategy. Precision.</h2><p className="muted">Every project is approached with research, strategy, and attention to detail, ensuring every solution serves both users and business goals.</p></div>
           <div className="stats__logo"><img className="stats__logo-word" src={`${assets}Group 55.svg`} alt="Vertex Studio" /></div>
         </div>
-        <div className="stats__grid">{[['10+', 'Years of Experience'], ['100+', 'Projects Delivered'], ['20+', 'Industries Served'], ['98%', 'Client Satisfaction']].map(([value, label]) => <div className="stat" key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>
+        <div className="stats__grid">{[['10+', 'Years of Experience'], ['100+', 'Projects Delivered'], ['20+', 'Industries Served'], ['98%', 'Client Satisfaction']].map(([value, label]) => <AnimatedStat key={label} targetValue={value} label={label} />)}</div>
       </section>
 
       <section className="section work">
