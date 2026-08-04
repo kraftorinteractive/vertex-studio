@@ -8,11 +8,13 @@ export default function FooterSection() {
       <div className="footer__cta-block">
         <img className="footer__art-bg" src="/assets/Mask Group 3@2x.png" alt="" aria-hidden="true" />
         <div className="footer__cta-content">
-          <h2 className="display">Let's Build Something<br /><span style={{ color: '#ff8c36' }}>Remarkable.</span></h2>
+          <h2 className="display"><span style={{ whiteSpace: 'nowrap' }}>Let's Build Something</span><br /><span style={{ color: '#ff8c36' }}>Remarkable.</span></h2>
           <p className="muted">Whether you're launching a startup, refreshing your brand, or scaling your digital presence, we're ready to help.</p>
           <Link className="button button--outline" to="/contact">Start Your Project <span className="arrow">↗</span></Link>
         </div>
       </div>
+
+      <div className="footer__separator" aria-hidden="true" />
 
       <div className="footer__main-block">
         <div className="vertex-section">
