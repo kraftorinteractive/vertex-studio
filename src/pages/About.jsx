@@ -49,6 +49,7 @@ export default function About() {
                     <p className="muted">We take the time to learn about your business, your users, and your goals before crafting solutions that are strategic, scalable, and purpose-driven.</p>
                   </div>
                   <div className="timeline">
+                    <span className="timeline__pulse" aria-hidden="true" />
                     {steps.map(([title, text]) => (
                       <div className="step" key={title}>
                         <h3>{title}</h3>

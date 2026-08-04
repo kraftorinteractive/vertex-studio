@@ -166,8 +166,66 @@ a { color: inherit; text-decoration: none; }
 .process__intro, .timeline { position: relative; z-index: 1; }
 .process__intro h2 { font-size: clamp(42px, 4.7vw, 64px); line-height: 1.03; letter-spacing: -.01em; }
 .process__intro .muted { max-width: 650px; font-size: 14px; }
-.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6%; margin-top: clamp(28px, 5svh, 66px); position: relative; }
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6%;
+  margin-top: clamp(28px, 5svh, 66px);
+  position: relative;
+  --tl-stride: 26.5%;
+  --tl-dot-offset: 6px;
+  --tl-cycle: 9s;
+}
 .timeline::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: rgba(122, 46, 219, 0.4); }
+
+.timeline__pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: 3;
+  pointer-events: none;
+  animation: timeline-pulse var(--tl-cycle) ease-in-out infinite;
+}
+.timeline__pulse::before,
+.timeline__pulse::after { content: ''; position: absolute; top: 0; left: var(--tl-dot-offset); }
+.timeline__pulse::before {
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, #cba6ff 40%, rgba(122, 46, 219, 0) 72%);
+  box-shadow: 0 0 20px 6px rgba(168, 102, 255, 0.55);
+}
+.timeline__pulse::after {
+  width: 110px;
+  height: 2px;
+  transform: translate(-100%, -50%);
+  border-radius: 2px;
+  background: linear-gradient(to right, rgba(168, 102, 255, 0) 0%, rgba(190, 140, 255, 0.8) 100%);
+  animation: timeline-pulse-tail var(--tl-cycle) linear infinite;
+}
+@keyframes timeline-pulse {
+  0%          { transform: translateX(0); opacity: 0; }
+  2%, 12%     { transform: translateX(0); opacity: 1; }
+  24%, 36%    { transform: translateX(var(--tl-stride)); opacity: 1; }
+  48%, 60%    { transform: translateX(calc(var(--tl-stride) * 2)); opacity: 1; }
+  72%, 84%    { transform: translateX(calc(var(--tl-stride) * 3)); opacity: 1; }
+  97%, 100%   { transform: translateX(100%); opacity: 0; }
+}
+@keyframes timeline-pulse-tail {
+  0%, 13%    { opacity: 0; }
+  17%, 22%   { opacity: 1; }
+  25%, 37%   { opacity: 0; }
+  41%, 46%   { opacity: 1; }
+  49%, 61%   { opacity: 0; }
+  65%, 70%   { opacity: 1; }
+  73%, 85%   { opacity: 0; }
+  89%, 94%   { opacity: 1; }
+  97%, 100%  { opacity: 0; }
+}
+
 .step { padding-top: 28px; position: relative; }
 .step::before {
   content: '';
@@ -179,6 +237,15 @@ a { color: inherit; text-decoration: none; }
   border-radius: 50%;
   background: #7A2EDB;
   box-shadow: 0 0 10px rgba(122, 46, 219, 0.6);
+  animation: timeline-dot-hit var(--tl-cycle) ease-out infinite;
+}
+.step:nth-child(3)::before { animation-delay: calc(var(--tl-cycle) * 0.24); }
+.step:nth-child(4)::before { animation-delay: calc(var(--tl-cycle) * 0.48); }
+.step:nth-child(5)::before { animation-delay: calc(var(--tl-cycle) * 0.72); }
+@keyframes timeline-dot-hit {
+  0%        { transform: scale(1); background: #7A2EDB; box-shadow: 0 0 10px rgba(122, 46, 219, 0.6); }
+  5%        { transform: scale(1.7); background: #cba6ff; box-shadow: 0 0 24px 7px rgba(168, 102, 255, 0.8); }
+  16%, 100% { transform: scale(1); background: #7A2EDB; box-shadow: 0 0 10px rgba(122, 46, 219, 0.6); }
 }
 .step h3 { margin: 0 0 12px; font-size: 21px; letter-spacing: -.01em; }
 .step p { margin: 0; color: #bab6c9; font-size: 14px; line-height: 1.45; }
@@ -488,9 +555,9 @@ a { color: inherit; text-decoration: none; }
   .about-hero .muted p { margin: 0 0 12px; }
   .mission { min-height: 74svh; }
   .timeline { grid-template-columns: 1fr 1fr; gap: 48px 26px; }
-  .timeline::before, .timeline::after { display: none; }
+  .timeline::before, .timeline::after, .timeline__pulse { display: none; }
   .step { padding-top: 0; }
-  .step::before { margin: 0 0 15px; }
+  .step::before { margin: 0 0 15px; animation: none; }
   .team { gap: 28px; }
   .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); height: auto; max-height: none; gap: 12px; }
   .person { aspect-ratio: 316 / 663; max-height: 360px; }
@@ -877,4 +944,10 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline__pulse { display: none; }
+  .step::before { animation: none; }
+}
+
 
