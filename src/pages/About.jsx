@@ -24,6 +24,7 @@ export default function About() {
             navigationPosition="right"
             responsiveWidth={800}
             credits={{ enabled: false }}
+            anchors={['hero', 'mission', 'process', 'team', 'footer']}
             render={() => <ReactFullpage.Wrapper>
                 <section className="section about-hero">
                   <Navbar scoped />

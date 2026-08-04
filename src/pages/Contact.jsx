@@ -430,6 +430,7 @@ export default function Contact() {
       navigationPosition="right"
       responsiveWidth={800}
       credits={{ enabled: false }}
+      anchors={['contact', 'footer']}
       render={() => (
         <ReactFullpage.Wrapper>
           <section className="section contact-page-section">

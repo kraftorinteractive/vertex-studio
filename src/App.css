@@ -203,7 +203,7 @@ a { color: inherit; text-decoration: none; }
   .person:hover .person__photo { opacity: 0; transform: translateY(18px); }
 }
 
-/* --- Footer Section Styles (Unified Native Scroll Flow) --- */
+/* --- Footer Section Styles (Unified Auto-Height Scroll Flow) --- */
 .footer {
   min-height: 100svh;
   background: #000;
@@ -212,17 +212,20 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0;
 }
 
-/* Top Part (Image 1): CTA Block with Background Image on Right 50% */
+/* Top Block (Image 1): CTA with Right-Side Background Art */
 .footer__cta-block {
   position: relative;
-  min-height: 76svh;
+  height: clamp(480px, 72svh, 680px);
+  min-height: clamp(440px, 68svh, 640px);
   display: flex;
   align-items: center;
-  padding: min(80px, 8svh) var(--page-padding) min(40px, 4svh);
+  padding: clamp(60px, 8svh, 100px) var(--page-padding) clamp(20px, 3svh, 40px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .footer__art-bg {
   position: absolute;
   right: 0;
@@ -236,35 +239,152 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
   z-index: 1;
 }
+
 .footer__cta-content {
   position: relative;
   z-index: 2;
-  max-width: 560px;
+  max-width: 580px;
 }
-.footer h2 { font-size: clamp(36px, 4.4vw, 64px); line-height: 1.04; letter-spacing: -.02em; }
-.footer__cta-content .muted { max-width: 490px; margin: 18px 0 28px; font-size: 15px; color: rgba(255, 255, 255, 0.7); line-height: 1.55; }
 
-/* Bottom Part (Image 2): VERTEX Logo + Copyright Links */
+.footer h2 {
+  font-size: clamp(36px, 4.4vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -.02em;
+}
+
+.footer__cta-content .muted {
+  max-width: 490px;
+  margin: 18px 0 28px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.55;
+}
+
+/* Main Footer Block (Image 2) */
 .footer__main-block {
-  min-height: 65svh;
-  padding: min(40px, 4svh) 0 min(20px, 2svh);
+  min-height: clamp(480px, 68svh, 680px);
+  padding: clamp(20px, 3svh, 40px) 0 clamp(16px, 2svh, 24px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.vertex-section { position: relative; overflow: hidden; flex: 1 1 auto; height: clamp(120px, min(32vw, 24svh), 580px); min-height: clamp(100px, min(24vw, 18svh), 280px); max-height: 580px; margin: clamp(12px, 1.6svh, 40px) 0 clamp(8px, 1.1svh, 28px); }
-.vertex-image { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(98vw, 1360px); height: auto; pointer-events: none; }
-.vertex-image--sharp { z-index: 2; clip-path: inset(0 0 50% 0); -webkit-clip-path: inset(0 0 50% 0); }
-.vertex-image--blur { z-index: 1; clip-path: inset(50% 0 0 0); -webkit-clip-path: inset(50% 0 0 0); filter: blur(14px) saturate(1.15); opacity: .92; -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.85) 0%, rgba(0,0,0,.45) 45%, transparent 100%); mask-image: linear-gradient(to bottom, rgba(0,0,0,.85) 0%, rgba(0,0,0,.45) 45%, transparent 100%); }
-.marquee-bar { position: absolute; left: 0; right: 0; top: 51%; height: 170px; z-index: 5; -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50px, transparent 170px); mask-image: linear-gradient(to bottom, black 0%, black 50px, transparent 170px); }
-.marquee-bar::before { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: -1; background-color: rgba(12, 4, 24, 0.25); background-image: linear-gradient(to bottom, transparent 49px, rgba(160, 110, 255, 0.45) 49px, rgba(160, 110, 255, 0.45) 50px, transparent 50px); backdrop-filter: blur(6px) saturate(110%) brightness(1.1); -webkit-backdrop-filter: blur(6px) saturate(110%) brightness(1.1); }
-.marquee-bar::after { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 170px; pointer-events: none; z-index: 0; background: radial-gradient(ellipse 200px 180px at 15% 15%, rgba(140, 70, 255, 0.35) 0%, transparent 75%), radial-gradient(ellipse 300px 200px at 45% 15%, rgba(160, 80, 255, 0.25) 0%, transparent 75%), radial-gradient(ellipse 180px 190px at 70% 15%, rgba(130, 60, 255, 0.3) 0%, transparent 75%), radial-gradient(ellipse 250px 170px at 90% 15%, rgba(150, 75, 255, 0.35) 0%, transparent 75%), radial-gradient(ellipse 350px 220px at 50% 15%, rgba(120, 50, 255, 0.18) 0%, transparent 75%); }
 
-.track { position: absolute; top: 16px; left: 0; right: 0; z-index: 10; display: flex; align-items: center; padding: 0 42px; gap: 60px; width: max-content; color: rgba(255, 255, 255, 0.85); font-size: 14px; font-weight: 300; letter-spacing: 0.5px; animation: ticker-marquee 32s linear infinite; }
-.track .dot { width: 3px; height: 3px; flex: none; border-radius: 50%; background: rgba(255, 255, 255, 0.3); margin-top: 1px; }
-@keyframes ticker-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-.footer__bottom { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 var(--page-padding); }
+/* Common VERTEX graphic & Marquee Bar */
+.vertex-section {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 auto;
+  height: clamp(120px, min(32vw, 24svh), 580px);
+  min-height: clamp(100px, min(24vw, 18svh), 280px);
+  max-height: 580px;
+  margin: clamp(12px, 1.6svh, 40px) 0 clamp(8px, 1.1svh, 28px);
+}
+
+.vertex-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(98vw, 1360px);
+  height: auto;
+  pointer-events: none;
+}
+
+.vertex-image--sharp {
+  z-index: 2;
+  clip-path: inset(0 0 50% 0);
+  -webkit-clip-path: inset(0 0 50% 0);
+}
+
+.vertex-image--blur {
+  z-index: 1;
+  clip-path: inset(50% 0 0 0);
+  -webkit-clip-path: inset(50% 0 0 0);
+  filter: blur(14px) saturate(1.15);
+  opacity: .92;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.85) 0%, rgba(0,0,0,.45) 45%, transparent 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.85) 0%, rgba(0,0,0,.45) 45%, transparent 100%);
+}
+
+.marquee-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 51%;
+  height: 170px;
+  z-index: 5;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50px, transparent 170px);
+  mask-image: linear-gradient(to bottom, black 0%, black 50px, transparent 170px);
+}
+
+.marquee-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-color: rgba(12, 4, 24, 0.25);
+  background-image: linear-gradient(to bottom, transparent 49px, rgba(160, 110, 255, 0.45) 49px, rgba(160, 110, 255, 0.45) 50px, transparent 50px);
+  backdrop-filter: blur(6px) saturate(110%) brightness(1.1);
+  -webkit-backdrop-filter: blur(6px) saturate(110%) brightness(1.1);
+}
+
+.marquee-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 170px;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse 200px 180px at 15% 15%, rgba(140, 70, 255, 0.35) 0%, transparent 75%), radial-gradient(ellipse 300px 200px at 45% 15%, rgba(160, 80, 255, 0.25) 0%, transparent 75%), radial-gradient(ellipse 180px 190px at 70% 15%, rgba(130, 60, 255, 0.3) 0%, transparent 75%), radial-gradient(ellipse 250px 170px at 90% 15%, rgba(150, 75, 255, 0.35) 0%, transparent 75%), radial-gradient(ellipse 350px 220px at 50% 15%, rgba(120, 50, 255, 0.18) 0%, transparent 75%);
+}
+
+.track {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 0 42px;
+  gap: 60px;
+  width: max-content;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  animation: ticker-marquee 32s linear infinite;
+}
+
+.track .dot {
+  width: 3px;
+  height: 3px;
+  flex: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  margin-top: 1px;
+}
+
+@keyframes ticker-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.footer__bottom {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+  align-items: center;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
 .footer__identity { display: flex; gap: 20px; align-items: center; }
 .footer__brand { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .footer__brand-icon { display: block; width: 28px; height: 14.2px; background: linear-gradient(135deg, #7a2edb, #2b0091); -webkit-mask: url('/assets/Group 19.svg') center / contain no-repeat; mask: url('/assets/Group 19.svg') center / contain no-repeat; }
@@ -273,6 +393,7 @@ a { color: inherit; text-decoration: none; }
 .footer__identity p { margin: 0; padding-left: 20px; border-left: 2px solid var(--orange); color: #e8e8e8; line-height: 1.45; font-size: 13px; }
 .footer__links { display: flex; gap: 42px; color: #ddd; }
 .copyright { margin: 16px 0 0; color: #737373; text-align: center; font-size: 11px; }
+
 
 @media (max-width: 800px) {
   .topbar { padding: 20px 24px; grid-template-columns: 1fr auto auto; gap: 14px; }
@@ -327,13 +448,19 @@ a { color: inherit; text-decoration: none; }
   .marquee-bar::after { height: 85px; background: radial-gradient(ellipse 140px 90px at 15% 15%, rgba(140, 70, 255, 0.35) 0%, transparent 75%), radial-gradient(ellipse 200px 100px at 45% 15%, rgba(160, 80, 255, 0.25) 0%, transparent 75%), radial-gradient(ellipse 130px 95px at 70% 15%, rgba(130, 60, 255, 0.3) 0%, transparent 75%), radial-gradient(ellipse 170px 85px at 90% 15%, rgba(150, 75, 255, 0.35) 0%, transparent 75%), radial-gradient(ellipse 240px 110px at 50% 15%, rgba(120, 50, 255, 0.18) 0%, transparent 75%); }
   .track { top: 12px; }
   .track { gap: 24px; font-size: 12px; }
+  .footer-cta { min-height: 100svh; padding-top: 80px; }
+  .footer-cta__bg-art { width: 80vw; opacity: 0.35; }
+  .footer-main { min-height: 100svh; padding-top: 20px; }
   .footer__art { display: none; }
   .footer__word { margin-top: 64px; }
   .ticker { justify-content: flex-start; overflow: hidden; gap: 24px; }
-  .footer__bottom { grid-template-columns: 1fr; padding-top: 55px; }
-  .footer__identity img { width: 100px; }
-  .footer__links { gap: 24px; font-size: 14px; }
+  .footer__bottom { grid-template-columns: 1fr; padding-top: 20px; text-align: center; justify-items: center; }
+  .footer__identity { flex-direction: column; text-align: center; }
+  .footer__identity p { border-left: 0; padding-left: 0; border-top: 2px solid var(--orange); padding-top: 10px; }
+  .footer__brand img { width: 100px; }
+  .footer__links { gap: 24px; font-size: 14px; justify-content: center; }
 }
+
 
 /* --- Contact Page Styles --- */
 .contact-page-section {
