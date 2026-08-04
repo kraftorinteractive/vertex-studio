@@ -32,15 +32,15 @@ export default function FooterSection() {
 
         <div className="footer__bottom">
           <div className="footer__identity">
-            <div className="footer__brand">
-              <span className="footer__brand-icon" aria-hidden="true" />
-              <span className="footer__brand-name">VERTEX</span>
-              <span className="footer__brand-sub">STUDIO</span>
+            <img className="footer__brand-img" src="/assets/Group 79@2x.png" alt="Vertex Studio" />
+            <div className="footer__slogan">
+              <span>Designing brands.</span>
+              <span>Creating experiences.</span>
+              <span>Building digital success.</span>
             </div>
-            <p>Designing brands.<br />Creating experiences.<br />Building digital success.</p>
           </div>
           <nav className="footer__links">
-            <Link to="/about">About</Link>
+            <Link to="/about" className="footer__link--active">About</Link>
             <a href="/#work">Portfolio</a>
             <Link to="/contact">Contact</Link>
           </nav>
