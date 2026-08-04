@@ -1,6 +1,27 @@
 import { Link } from 'react-router-dom';
 
-const tickerLabels = ['Logo Design', 'Visual Identity', 'Website Development', 'Digital Marketing Assets', 'Packaging Design', 'Brochures'];
+const tickerLabels = [
+  'UI UX Design',
+  'Product Design',
+  'Website Design',
+  'Website Development',
+  'Brand Identity',
+  'Logo Design',
+  'Graphic Design',
+  'Creative Agency',
+  'Digital Design',
+  'UX Research',
+  'Web Development',
+  'Responsive Website',
+  'Landing Page Design',
+  'E-commerce Website',
+  'Social Media Design',
+  'Print Design',
+  'Packaging Design',
+  'Branding Agency',
+  'Design Consultancy',
+  'Creative Studio',
+];
 
 export default function FooterSection() {
   return (

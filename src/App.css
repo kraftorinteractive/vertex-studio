@@ -1265,11 +1265,11 @@ a {
   position: absolute;
   left: 0;
   right: 0;
-  top: 51%;
+  top: 50%;
   height: 170px;
   z-index: 5;
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50px, transparent 170px);
-  mask-image: linear-gradient(to bottom, black 0%, black 50px, transparent 170px);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60px, transparent 170px);
+  mask-image: linear-gradient(to bottom, black 0%, black 60px, transparent 170px);
 }
 
 .marquee-bar::before {
@@ -1278,8 +1278,8 @@ a {
   inset: 0;
   pointer-events: none;
   z-index: -1;
-  background-color: rgba(12, 4, 24, 0.25);
-  background-image: linear-gradient(to bottom, transparent 49px, rgba(160, 110, 255, 0.45) 49px, rgba(160, 110, 255, 0.45) 50px, transparent 50px);
+  background-color: rgba(12, 4, 24, 0.35);
+  background-image: linear-gradient(to bottom, transparent 54px, rgba(160, 110, 255, 0.28) 54px, rgba(160, 110, 255, 0.28) 55px, transparent 55px);
   backdrop-filter: blur(6px) saturate(110%) brightness(1.1);
   -webkit-backdrop-filter: blur(6px) saturate(110%) brightness(1.1);
 }
@@ -1305,13 +1305,14 @@ a {
   display: flex;
   align-items: center;
   padding: 0 42px;
-  gap: 60px;
+  gap: 50px;
   width: max-content;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  animation: ticker-marquee 32s linear infinite;
+  color: #ffffff;
+  font-family: "Clash Display", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  animation: ticker-marquee 75s linear infinite;
 }
 
 .track .dot {
