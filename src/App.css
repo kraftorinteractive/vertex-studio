@@ -1516,6 +1516,10 @@ a {
     padding-inline: 18px;
   }
 
+  .hero__client-item {
+    margin-top: -22px;
+  }
+
   .hero__client img {
     width: 195px;
     height: 72px;
@@ -1584,8 +1588,27 @@ a {
     margin: 0 0 12px;
   }
 
-  .about-hero__layout {
-    gap: 0;
+  .about-hero__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .about-hero__text {
+    grid-column: 1;
+  }
+
+  .about-hero {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-hero__bg-art {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    object-position: center;
+    opacity: 0.8;
   }
 
   .about-hero h1 {
@@ -1751,6 +1774,30 @@ a {
     gap: 24px;
     font-size: 15px;
     justify-content: center;
+  }
+
+  /* Footer CTA Mobile Fix */
+  .footer__cta-block {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+  }
+
+  .footer__art-bg {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    object-position: center;
+    margin-bottom: 24px;
+    opacity: 0.8;
+    order: -1;
+  }
+
+  .footer__cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
