@@ -1367,6 +1367,7 @@ a {
   max-width: 1360px;
   width: 100%;
   margin: 0 auto;
+  transform: translateY(-40px);
   padding: 0 var(--page-padding) clamp(30px, 5svh, 50px);
 }
 
