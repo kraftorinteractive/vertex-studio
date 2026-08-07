@@ -420,6 +420,7 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 11%;
   align-items: center;
+  transform: translateY(-30px);
 }
 
 .services__intro .display {
