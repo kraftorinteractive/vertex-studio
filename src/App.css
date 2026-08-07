@@ -250,6 +250,33 @@ a {
   transform: translate(3px, -3px);
 }
 
+.button--footer-cta {
+  border: 1px solid rgba(255, 255, 255, .65);
+  background: transparent;
+  border-radius: 9999px;
+  padding: 14px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #ffffff;
+  font-family: "Clash Display", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.button--footer-cta:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button--footer-cta:hover .button__arrow-icon {
+  transform: translate(3px, -3px);
+}
+
 .button--outline {
   border-color: rgba(255, 255, 255, .65);
 }
