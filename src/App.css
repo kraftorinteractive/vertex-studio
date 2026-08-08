@@ -148,11 +148,21 @@ a {
 
 .section {
   position: relative;
-  min-height: 100svh;
-  padding: clamp(90px, 12svh, 130px) var(--page-padding) clamp(36px, 5svh, 52px);
+  height: 100svh;
+  max-height: 100svh;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: clamp(64px, 8svh, 100px) var(--page-padding) clamp(24px, 3.5svh, 44px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.fp-overflow,
+.fp-scrollable {
+  overflow: hidden !important;
+  max-height: 100% !important;
+  height: 100% !important;
 }
 
 .grid-bg {
@@ -776,9 +786,11 @@ a {
 }
 
 .process {
-  overflow: hidden;
+  overflow: hidden !important;
   background: #050114;
   position: relative;
+  padding: clamp(80px, 10svh, 120px) var(--page-padding) clamp(36px, 5svh, 56px);
+  justify-content: center;
 }
 
 .process__bg-img {
@@ -806,18 +818,20 @@ a {
   font-size: clamp(42px, 4.7vw, 64px);
   line-height: 1.03;
   letter-spacing: -.01em;
+  margin: 4px 0 12px;
 }
 
 .process__intro .muted {
   max-width: 650px;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .timeline {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 6%;
-  margin-top: clamp(28px, 5svh, 66px);
+  margin-top: clamp(36px, 6svh, 72px);
   position: relative;
   --tl-stride: 26.5%;
   --tl-dot-offset: 6px;

@@ -23,6 +23,7 @@ export default function About() {
             navigation={true}
             navigationPosition="right"
             responsiveWidth={800}
+            scrollOverflow={false}
             credits={{ enabled: false }}
             anchors={['hero', 'mission', 'process', 'team', 'footer']}
             render={() => <ReactFullpage.Wrapper>

@@ -148,6 +148,7 @@ export default function Home() {
     navigation={true}
     navigationPosition="right"
     responsiveWidth={800}
+    scrollOverflow={false}
     credits={{ enabled: false }}
     anchors={['hero', 'services', 'stats', 'work', 'footer']}
     render={() => <ReactFullpage.Wrapper>
