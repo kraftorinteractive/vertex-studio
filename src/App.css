@@ -1188,15 +1188,26 @@ a {
 }
 
 /* --- Footer Section Styles (Unified Auto-Height Scroll Flow) --- */
-.footer {
+.footer.section {
+  height: 100svh !important;
+  max-height: 100svh !important;
   min-height: 100svh;
   background: #000;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0;
+  padding: 0 !important;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.footer.section::-webkit-scrollbar {
+  display: none;
 }
 
 /* Top Block (Image 1): CTA with Right-Side Background Art */

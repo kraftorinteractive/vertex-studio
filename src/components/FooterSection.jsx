@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const tickerLabels = [
@@ -24,8 +25,35 @@ const tickerLabels = [
 ];
 
 export default function FooterSection() {
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    const el = footerRef.current;
+    if (!el) return;
+
+    const handleNativeWheel = (e) => {
+      // If the user is at the very top of the footer and scrolls UP,
+      // we let the event bubble so fullpage.js sees it and goes to the previous section.
+      if (e.deltaY < 0 && el.scrollTop <= 0) {
+        return; 
+      }
+      
+      // Otherwise, they are scrolling down into the footer, or scrolling up but haven't reached the top yet.
+      // We STOP fullpage.js from seeing this event, so it doesn't jump sections!
+      // The browser will still scroll the container natively.
+      e.stopPropagation();
+    };
+
+    // Use a native DOM listener to ensure we can catch the event before fullpage.js (which listens on window)
+    el.addEventListener('wheel', handleNativeWheel, { passive: false });
+    return () => el.removeEventListener('wheel', handleNativeWheel);
+  }, []);
+
   return (
-    <section className="section footer fp-auto-height">
+    <section 
+      className="section footer fp-auto-height" 
+      ref={footerRef}
+    >
       <div className="footer__cta-block">
         <img className="footer__art-bg" src="/assets/Mask Group 3@2x.png" alt="" aria-hidden="true" />
         <div className="footer__cta-content">
