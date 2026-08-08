@@ -36,7 +36,7 @@ export default function Navbar({ scoped = false }) {
         <Link to="/#work" onClick={handlePortfolioClick}>Portfolio</Link>
         <Link to="/contact" aria-current={pathname === '/contact' ? 'page' : undefined}>Contact</Link>
       </nav>
-      <Link className="consultation" to="/contact">Free Consultation</Link>
+      <Link className="consultation" to="/contact">Free Consultation <img className="button__arrow-icon" src="/assets/Group 51.svg" alt="" aria-hidden="true" /></Link>
       <button type="button" className={`menu-toggle ${menuOpen ? 'menu-toggle--open' : ''}`} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(o => !o)}>
         <span /><span /><span />
       </button>
@@ -45,7 +45,7 @@ export default function Navbar({ scoped = false }) {
           <Link to="/about" aria-current={pathname === '/about' ? 'page' : undefined}>About</Link>
           <Link to="/#work" onClick={handlePortfolioClick}>Portfolio</Link>
           <Link to="/contact" aria-current={pathname === '/contact' ? 'page' : undefined} onClick={() => setMenuOpen(false)}>Contact</Link>
-          <Link className="mobile-nav__cta" to="/contact" onClick={() => setMenuOpen(false)}>Free Consultation</Link>
+          <Link className="mobile-nav__cta" to="/contact" onClick={() => setMenuOpen(false)}>Free Consultation <img className="button__arrow-icon" src="/assets/Group 51.svg" alt="" aria-hidden="true" /></Link>
         </nav>,
         document.body
       )}

@@ -86,11 +86,17 @@ a {
   padding: 12px 24px;
   background: var(--orange);
   color: white;
-  font-size: clamp(13px, .8vw, 14px);
-  font-weight: 700;
+  font-family: "Clash Display", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
   line-height: 1;
   cursor: pointer;
   box-shadow: 0 8px 25px rgba(255, 140, 54, .2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: transform .2s, background .2s;
 }
 
 .consultation:hover {
@@ -256,7 +262,7 @@ a {
   transition: transform 0.25s ease;
 }
 
-.button--violet:hover .button__arrow-icon {
+.button--violet:hover .button__arrow-icon, .consultation:hover .button__arrow-icon, .mobile-nav__cta:hover .button__arrow-icon {
   transform: translate(3px, -3px);
 }
 
@@ -1520,7 +1526,14 @@ a {
     padding: 14px 32px;
     background: var(--orange);
     color: #fff;
-    font-weight: 700;
+    font-family: "Clash Display", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: transform .2s, background .2s;
   }
 
   .section {
