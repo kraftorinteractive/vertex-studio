@@ -262,7 +262,9 @@ a {
   transition: transform 0.25s ease;
 }
 
-.button--violet:hover .button__arrow-icon, .consultation:hover .button__arrow-icon, .mobile-nav__cta:hover .button__arrow-icon {
+.button--violet:hover .button__arrow-icon,
+.consultation:hover .button__arrow-icon,
+.mobile-nav__cta:hover .button__arrow-icon {
   transform: translate(3px, -3px);
 }
 
@@ -1924,15 +1926,15 @@ a {
 
 /* --- Contact Form Styles --- */
 .contact-form {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.25);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.15);
+  border-left-color: rgba(255, 255, 255, 0.12);
   border-radius: 24px;
   padding: 24px 30px;
-  backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(120%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1941,15 +1943,7 @@ a {
 }
 
 .contact-form::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 80% 20%, rgba(122, 46, 219, 0.18) 0%, transparent 55%);
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 .contact-form>* {
@@ -2051,7 +2045,7 @@ a {
 .contact-form__input,
 .contact-form__textarea {
   background: rgba(5, 1, 15, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 10px;
   padding: 9px 14px;
   color: #fff;
