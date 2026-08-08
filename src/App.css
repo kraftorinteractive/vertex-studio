@@ -566,7 +566,7 @@ a {
 .stats__top h2 {
   font-size: clamp(42px, 4.5vw, 62px);
   line-height: 1.04;
-  letter-spacing: -.02em;
+  letter-spacing: 0.05em;
 }
 
 .stats__top .muted {
