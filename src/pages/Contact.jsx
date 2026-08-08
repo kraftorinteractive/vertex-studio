@@ -429,6 +429,7 @@ export default function Contact() {
       navigation={true}
       navigationPosition="right"
       responsiveWidth={800}
+      scrollOverflow={false}
       credits={{ enabled: false }}
       anchors={['contact', 'footer']}
       render={() => (

@@ -1228,6 +1228,7 @@ a {
 .footer__separator {
   width: min(calc(100% - 2 * var(--page-padding)), 1280px);
   height: 1px;
+  flex-shrink: 0;
   margin: 0 auto;
   background: linear-gradient(90deg, transparent 0%, rgba(122, 46, 219, 0.6) 20%, rgba(122, 46, 219, 0.6) 80%, transparent 100%);
   position: relative;
