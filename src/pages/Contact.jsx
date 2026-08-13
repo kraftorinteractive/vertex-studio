@@ -388,9 +388,9 @@ export default function Contact() {
       ? `${countryCode} ${phone.trim()} (Same as Phone)`
       : `${whatsappCountryCode} ${whatsappPhone.trim()}`;
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_kyz68uy';
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_contact';
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_c659n21';
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_r52f3bz';
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'mhO4lQR3CLSZmmkhX';
 
     try {
       if (publicKey) {
