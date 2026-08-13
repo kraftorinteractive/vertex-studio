@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import FooterSection from '../components/FooterSection';
 import './Portfolio.css';
@@ -70,10 +70,25 @@ const portfolioImages = [
   "mockup 2@2x.png"
 ];
 
+// Helper function to randomly shuffle an array (Fisher-Yates algorithm)
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function Portfolio() {
+  const [images, setImages] = useState([]);
+
   useEffect(() => {
     // Scroll to top when loading this page
     window.scrollTo(0, 0);
+    
+    // Shuffle the images so every visit is unique!
+    setImages(shuffleArray(portfolioImages));
   }, []);
 
   return (
@@ -88,7 +103,7 @@ export default function Portfolio() {
 
         <section className="portfolio-grid-container">
           <div className="portfolio-masonry">
-            {portfolioImages.map((img, idx) => (
+            {images.map((img, idx) => (
               <div key={idx} className="portfolio-masonry-item">
                 <img 
                   src={`/assets/portfolio/${img}`} 
