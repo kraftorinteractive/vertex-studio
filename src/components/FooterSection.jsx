@@ -93,7 +93,7 @@ export default function FooterSection() {
           </div>
           <nav className="footer__links">
             <Link to="/about" className="footer__link--active">About</Link>
-            <a href="/#work">Portfolio</a>
+            <Link to="/portfolio">Portfolio</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/privacy">Privacy Policy</Link>
           </nav>
