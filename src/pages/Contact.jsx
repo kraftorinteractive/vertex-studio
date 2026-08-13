@@ -446,8 +446,8 @@ export default function Contact() {
                   Whether you're launching a startup, refreshing your brand, or scaling your digital presence, we're ready to help.
                 </p>
                 <div className="contact-page__direct">
-                  <a className="button button--outline" href="mailto:hello@vertexstudio.nz">
-                    hello@vertexstudio.nz <span className="arrow">↗</span>
+                  <a className="button button--outline" href="mailto:info@vertexstudio.nz">
+                    info@vertexstudio.nz <span className="arrow">↗</span>
                   </a>
                 </div>
               </div>

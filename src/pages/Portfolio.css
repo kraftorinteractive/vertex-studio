@@ -71,7 +71,11 @@
 
 @media (max-width: 640px) {
   .portfolio-masonry {
-    column-count: 1;
+    column-count: 2;
+    column-gap: 10px;
+  }
+  .portfolio-masonry-item {
+    margin-bottom: 10px;
   }
   .portfolio-main {
     padding-top: 120px;

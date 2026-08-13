@@ -170,7 +170,7 @@ export default function Privacy() {
                     Vertex Studio<br />
                     New Zealand<br />
                     Privacy: privacy@[yourdomain].nz<br />
-                    General: hello@[yourdomain].nz<br />
+                    General: info@vertexstudio.nz<br />
                     Legal Entity: [Registered Company Name]<br />
                     NZBN: [NZBN]
                   </p>
