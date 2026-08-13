@@ -9,6 +9,42 @@
   position: relative;
 }
 
+.watermark-wrapper {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 50vw;
+  height: 800px;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Watermark */
+.privacy-watermark {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  left: auto;
+  pointer-events: none;
+  font-family: "Clash Display", Arial, sans-serif;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.025);
+  line-height: 0.9;
+  text-transform: none;
+  text-align: right;
+  z-index: 0;
+  white-space: nowrap;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.watermark-line1,
+.watermark-line2 {
+  font-size: clamp(150px, 18vw, 250px);
+}
 
 .privacy-page__container {
   max-width: 1240px;
@@ -92,6 +128,8 @@
 }
 
 .privacy-nav {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 16px;

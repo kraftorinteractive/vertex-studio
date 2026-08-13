@@ -69,6 +69,12 @@ export default function Privacy() {
             <div className="privacy-page__container">
               {/* Sidebar */}
               <aside className="privacy-sidebar">
+                <div className="watermark-wrapper">
+                  <div className="privacy-watermark">
+                    <div className="watermark-line1">Privacy</div>
+                    <div className="watermark-line2">Policy</div>
+                  </div>
+                </div>
                 <nav className="privacy-nav">
                   {sections.map(({ id, title }) => (
                     <button
