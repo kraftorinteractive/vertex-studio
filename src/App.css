@@ -1874,7 +1874,7 @@ a {
   min-height: 100svh;
   padding-top: clamp(100px, 13svh, 130px);
   padding-bottom: 24px;
-  background: #000 url('/assets/Group 124@2x.png') center / cover no-repeat;
+  background: #000 url('/assets/Group 124@2x.webp') center / cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
