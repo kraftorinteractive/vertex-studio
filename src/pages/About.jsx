@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SEO from '../components/SEO';
 import FooterSection from '../components/FooterSection';
 import Navbar from '../components/Navbar';
 import fullpageExports from '@fullpage/react-fullpage';
@@ -18,6 +19,11 @@ export default function About() {
     const [activeMember, setActiveMember] = useState(null);
 
     return <>
+        <SEO 
+            title="About Vertex Studio | Our Vision & Creative Team"
+            description="Discover the creative minds behind Vertex Studio. We are a global team of designers and developers dedicated to building remarkable brands and digital experiences."
+            type="profile"
+        />
         <ReactFullpage
             scrollingSpeed={850}
             navigation={true}

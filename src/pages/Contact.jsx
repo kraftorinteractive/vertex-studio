@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import emailjs from '@emailjs/browser';
 import Navbar from '../components/Navbar';
 import FooterSection from '../components/FooterSection';
+import SEO from '../components/SEO';
 import fullpageExports from '@fullpage/react-fullpage';
 
 const ReactFullpage = fullpageExports.default || fullpageExports;
@@ -424,7 +425,13 @@ export default function Contact() {
   };
 
   return (
-    <ReactFullpage
+    <>
+      <SEO 
+        title="Contact Vertex Studio | Start Your Digital Project"
+        description="Partner with Vertex Studio to build something remarkable. Get in touch with our expert design team for a free consultation on your next digital venture."
+        type="ContactPage"
+      />
+      <ReactFullpage
       scrollingSpeed={850}
       navigation={true}
       navigationPosition="right"
@@ -586,6 +593,7 @@ export default function Contact() {
         </ReactFullpage.Wrapper>
       )}
     />
+    </>
   );
 }
 

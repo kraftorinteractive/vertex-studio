@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import fullpageExports from '@fullpage/react-fullpage';
 import Navbar from '../components/Navbar';
 import FooterSection from '../components/FooterSection';
+import SEO from '../components/SEO';
 import './Privacy.css';
 
 const ReactFullpage = fullpageExports.default || fullpageExports;
@@ -53,7 +54,12 @@ export default function Privacy() {
   };
 
   return (
-    <ReactFullpage
+    <>
+      <SEO 
+        title="Privacy Policy | Vertex Studio"
+        description="The official Privacy Policy for Vertex Studio. Learn how we securely collect, use, and protect your digital information."
+      />
+      <ReactFullpage
       scrollingSpeed={850}
       navigation={true}
       navigationPosition="right"
@@ -183,5 +189,6 @@ export default function Privacy() {
         </ReactFullpage.Wrapper>
       )}
     />
+    </>
   );
 }

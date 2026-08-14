@@ -1,5 +1,6 @@
 import FooterSection from '../components/FooterSection';
 import Navbar from '../components/Navbar';
+import SEO from '../components/SEO';
 import fullpageExports from '@fullpage/react-fullpage';
 import { useEffect, useRef, useState } from 'react';
 
@@ -143,7 +144,13 @@ function AnimatedStat({ targetValue, label }) {
 }
 
 export default function Home() {
-  return <ReactFullpage
+  return (
+    <>
+      <SEO 
+        title="Vertex Studio | Global UI/UX, Branding & Digital Product Design"
+        description="Vertex Studio is an elite digital design agency delivering world-class UI/UX, brand identity, and web development. Transform your digital presence with Vertex Studio."
+      />
+      <ReactFullpage
     scrollingSpeed={850}
     navigation={true}
     navigationPosition="right"
@@ -217,5 +224,7 @@ export default function Home() {
       </section>
       <FooterSection />
     </ReactFullpage.Wrapper>}
-  />;
+      />
+    </>
+  );
 }

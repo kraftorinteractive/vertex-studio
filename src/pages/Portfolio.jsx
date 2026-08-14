@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import FooterSection from '../components/FooterSection';
+import SEO from '../components/SEO';
 import './Portfolio.css';
 
 // Using the exact 63 filenames from the public/assets/portfolio directory
@@ -93,6 +94,11 @@ export default function Portfolio() {
 
   return (
     <div className="portfolio-page">
+      <SEO 
+        title="Vertex Studio Portfolio | Award-Winning Design & UI/UX Case Studies"
+        description="Explore the Vertex Studio portfolio. View our premium showcase of brand identity, web design, packaging, and digital product design for forward-thinking companies."
+        type="CollectionPage"
+      />
       <Navbar scoped={true} />
       
       <main className="portfolio-main">
