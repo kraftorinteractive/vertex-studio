@@ -531,7 +531,11 @@ a {
   overflow: hidden;
   background: linear-gradient(100deg, #7a2edb 0%, #2b0091 100%);
   position: relative;
+  padding-top: clamp(40px, 5svh, 80px);
+  padding-bottom: clamp(40px, 5svh, 80px);
 }
+
+
 
 .stats__bg-img {
   position: absolute;
@@ -797,7 +801,7 @@ a {
   overflow: hidden !important;
   background: #050114;
   position: relative;
-  padding: clamp(80px, 10svh, 120px) var(--page-padding) clamp(36px, 5svh, 56px);
+  padding: clamp(60px, 8svh, 90px) var(--page-padding);
   justify-content: center;
 }
 
