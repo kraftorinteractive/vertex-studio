@@ -65,7 +65,7 @@ export default function About() {
                     ))}
                   </div>
                 </section>
-                <section className="section team grid-bg">
+                {/* <section className="section team grid-bg">
                     <div className="team__head">
                         <p className="eyebrow">Meet Our Experts</p>
                         <h2 className="display">The People Behind Vertex Studio</h2>
@@ -104,7 +104,7 @@ export default function About() {
                             </article>
                         ))}
                     </div>
-                </section>
+                </section> */}
                 <FooterSection />
             </ReactFullpage.Wrapper>}
         />
