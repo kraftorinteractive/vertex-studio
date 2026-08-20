@@ -1,11 +1,8 @@
 /* --- Privacy Page Styles --- */
 .privacy-page-section {
-  min-height: 100svh;
   background: #000 url('/assets/Group 124.png') center / cover no-repeat;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   position: relative;
 }
 

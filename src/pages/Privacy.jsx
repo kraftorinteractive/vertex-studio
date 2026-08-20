@@ -59,18 +59,9 @@ export default function Privacy() {
         title="Privacy Policy | Vertex Studio"
         description="The official Privacy Policy for Vertex Studio. Learn how we securely collect, use, and protect your digital information."
       />
-      <ReactFullpage
-      scrollingSpeed={850}
-      navigation={true}
-      navigationPosition="right"
-      responsiveWidth={800}
-      scrollOverflow={false}
-      credits={{ enabled: false }}
-      anchors={['privacy', 'footer']}
-      render={() => (
-        <ReactFullpage.Wrapper>
-          <section className="section privacy-page-section">
-            <Navbar scoped />
+      <div className="privacy-page-wrapper">
+        <div className="privacy-page-section">
+          <Navbar scoped />
 
             <div className="privacy-page__container">
               {/* Sidebar */}
@@ -183,12 +174,10 @@ export default function Privacy() {
                 </section>
               </main>
             </div>
-          </section>
+          </div>
           
           <FooterSection />
-        </ReactFullpage.Wrapper>
-      )}
-    />
+      </div>
     </>
   );
 }
