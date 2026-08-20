@@ -164,11 +164,11 @@ a {
   justify-content: center;
 }
 
-.fp-overflow,
-.fp-scrollable {
-  overflow: hidden !important;
-  max-height: 100% !important;
-  height: 100% !important;
+.fp-responsive .section {
+  height: auto !important;
+  max-height: none !important;
+  min-height: 100svh;
+  overflow: visible !important;
 }
 
 .grid-bg {
