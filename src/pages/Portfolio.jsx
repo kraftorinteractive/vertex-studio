@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import FooterSection from '../components/FooterSection';
 import SEO from '../components/SEO';
+import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/styles.css";
 import './Portfolio.css';
 
 // Using the exact 63 filenames from the public/assets/portfolio directory
@@ -83,6 +86,7 @@ function shuffleArray(array) {
 
 export default function Portfolio() {
   const [images, setImages] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
 
   useEffect(() => {
     // Scroll to top when loading this page
@@ -110,7 +114,12 @@ export default function Portfolio() {
         <section className="portfolio-grid-container">
           <div className="portfolio-masonry">
             {images.map((img, idx) => (
-              <div key={idx} className="portfolio-masonry-item">
+              <div 
+                key={idx} 
+                className="portfolio-masonry-item" 
+                onClick={() => setLightboxIndex(idx)}
+                style={{ cursor: 'pointer' }}
+              >
                 <img 
                   src={`/assets/portfolio/${img}`} 
                   alt={`Portfolio item ${idx + 1}`} 
@@ -124,6 +133,22 @@ export default function Portfolio() {
       </main>
 
       <FooterSection />
+
+      <Lightbox
+        index={lightboxIndex}
+        open={lightboxIndex >= 0}
+        close={() => setLightboxIndex(-1)}
+        slides={images.map(img => ({ src: `/assets/portfolio/${img}` }))}
+        plugins={[Zoom]}
+        toolbar={{
+          buttons: [
+            "close",
+          ],
+        }}
+        zoom={{
+          maxZoomPixelRatio: 3,
+        }}
+      />
     </div>
   );
 }
