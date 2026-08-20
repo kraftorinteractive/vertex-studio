@@ -24,7 +24,7 @@ export default function Navbar({ scoped = false }) {
         <Link to="/portfolio" aria-current={pathname === '/portfolio' ? 'page' : undefined}>Portfolio</Link>
         <Link to="/contact" aria-current={pathname === '/contact' ? 'page' : undefined}>Contact</Link>
       </nav>
-      <Link className="consultation" to="/contact">Free Consultation <img className="button__arrow-icon" src="/assets/Group 51.svg" alt="" aria-hidden="true" /></Link>
+      <a className="consultation" href="mailto:info@vertexstudio.nz">Free Consultation <img className="button__arrow-icon" src="/assets/Group 51.svg" alt="" aria-hidden="true" /></a>
       <button type="button" className={`menu-toggle ${menuOpen ? 'menu-toggle--open' : ''}`} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(o => !o)}>
         <span /><span /><span />
       </button>

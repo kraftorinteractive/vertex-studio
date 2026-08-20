@@ -453,8 +453,8 @@ export default function Contact() {
                   Whether you're launching a startup, refreshing your brand, or scaling your digital presence, we're ready to help.
                 </p>
                 <div className="contact-page__direct">
-                  <a className="button button--outline" href="mailto:info@vertexstudio.nz">
-                    info@vertexstudio.nz <span className="arrow">↗</span>
+                  <a className="button button--outline" href="https://wa.me/919028791816?text=Hi%20Vertex%20Studio%2C%20I%20am%20interested%20in%20discussing%20a%20project%20with%20you." target="_blank" rel="noopener noreferrer">
+                    WhatsApp Us <span className="arrow">↗</span>
                   </a>
                 </div>
               </div>
