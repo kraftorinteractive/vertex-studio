@@ -1427,7 +1427,7 @@ a {
   flex-direction: column;
   gap: 2px;
   padding-left: clamp(16px, 2vw, 24px);
-  margin-left: 4px;
+  margin-left: clamp(16px, 2vw, 24px);
   border-left: 2px solid var(--orange);
   font-family: "Clash Display", Arial, sans-serif;
   font-size: clamp(16px, 1.35vw, 22px);
