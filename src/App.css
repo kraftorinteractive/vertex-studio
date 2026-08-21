@@ -458,6 +458,8 @@ a {
 
 .services {
   gap: clamp(36px, 6svh, 70px);
+  padding-top: clamp(40px, 6svh, 80px) !important;
+  padding-bottom: clamp(40px, 6svh, 80px) !important;
 }
 
 .services__intro {
@@ -465,7 +467,6 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 11%;
   align-items: center;
-  transform: translateY(-30px);
 }
 
 .services__intro .display {
@@ -499,7 +500,7 @@ a {
   grid-template-columns: repeat(4, 1fr);
   row-gap: 64px;
   column-gap: 6%;
-  padding-top: clamp(18px, 3svh, 35px);
+  padding-top: 20px;
 }
 
 .service-card {
