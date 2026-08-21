@@ -95,7 +95,7 @@ export default function FooterSection() {
             <Link to="/about" className="footer__link--active">About</Link>
             <Link to="/portfolio">Portfolio</Link>
             <Link to="/contact">Contact</Link>
-            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/privacy">Privacy & Terms</Link>
           </nav>
         </div>
         <p className="copyright">© 2026 Vertex Studio. All Rights Reserved.</p>
