@@ -24,7 +24,7 @@ export default function Navbar({ scoped = false }) {
         <Link to="/portfolio" aria-current={pathname === '/portfolio' ? 'page' : undefined}>Portfolio</Link>
         <Link to="/contact" aria-current={pathname === '/contact' ? 'page' : undefined}>Contact</Link>
       </nav>
-      <a className="consultation" href="mailto:info@vertexstudio.nz">Free Consultation <img className="button__arrow-icon" src="/assets/Group 51.svg" alt="" aria-hidden="true" /></a>
+      <a className="consultation" href="https://wa.me/919028791816?text=Hi%20Vertex%20Studio%2C%20I%20am%20interested%20in%20discussing%20a%20project%20with%20you." target="_blank" rel="noopener noreferrer">Free Consultation <img className="button__arrow-icon" src="/assets/Group 51.svg" alt="" aria-hidden="true" /></a>
       <button type="button" className={`menu-toggle ${menuOpen ? 'menu-toggle--open' : ''}`} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(o => !o)}>
         <span /><span /><span />
       </button>
@@ -33,7 +33,7 @@ export default function Navbar({ scoped = false }) {
           <Link to="/about" aria-current={pathname === '/about' ? 'page' : undefined}>About</Link>
           <Link to="/portfolio" aria-current={pathname === '/portfolio' ? 'page' : undefined} onClick={() => setMenuOpen(false)}>Portfolio</Link>
           <Link to="/contact" aria-current={pathname === '/contact' ? 'page' : undefined} onClick={() => setMenuOpen(false)}>Contact</Link>
-          <Link className="mobile-nav__cta" to="/contact" onClick={() => setMenuOpen(false)}>Free Consultation <img className="button__arrow-icon" src="/assets/Group 51.svg" alt="" aria-hidden="true" /></Link>
+          <a className="mobile-nav__cta" href="https://wa.me/919028791816?text=Hi%20Vertex%20Studio%2C%20I%20am%20interested%20in%20discussing%20a%20project%20with%20you." target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Free Consultation <img className="button__arrow-icon" src="/assets/Group 51.svg" alt="" aria-hidden="true" /></a>
         </nav>,
         document.body
       )}
