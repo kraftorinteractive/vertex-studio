@@ -154,10 +154,13 @@ a {
 
 .section {
   position: relative;
+  height: 100vh;
   height: 100svh;
+  max-height: 100vh;
   max-height: 100svh;
   box-sizing: border-box;
   overflow: hidden;
+  padding: clamp(64px, 8vh, 100px) var(--page-padding) clamp(24px, 3.5vh, 44px);
   padding: clamp(64px, 8svh, 100px) var(--page-padding) clamp(24px, 3.5svh, 44px);
   display: flex;
   flex-direction: column;
@@ -167,6 +170,7 @@ a {
 .fp-responsive .section {
   height: auto !important;
   max-height: none !important;
+  min-height: 100vh;
   min-height: 100svh;
   overflow: visible !important;
 }
@@ -457,8 +461,11 @@ a {
 }
 
 .services {
+  gap: clamp(36px, 6vh, 70px);
   gap: clamp(36px, 6svh, 70px);
+  padding-top: clamp(40px, 6vh, 80px) !important;
   padding-top: clamp(40px, 6svh, 80px) !important;
+  padding-bottom: clamp(40px, 6vh, 80px) !important;
   padding-bottom: clamp(40px, 6svh, 80px) !important;
 }
 
@@ -471,6 +478,7 @@ a {
 
 .services__intro .display {
   color: #4e18bd;
+  font-size: clamp(50px, min(9.2vw, 11vh), 126px);
   font-size: clamp(50px, min(9.2vw, 11svh), 126px);
   line-height: .92;
   letter-spacing: -.02em;
@@ -504,6 +512,7 @@ a {
 }
 
 .service-card {
+  min-height: clamp(80px, 10vh, 120px);
   min-height: clamp(80px, 10svh, 120px);
 }
 
@@ -532,7 +541,9 @@ a {
   overflow: hidden;
   background: linear-gradient(100deg, #7a2edb 0%, #2b0091 100%);
   position: relative;
+  padding-top: clamp(40px, 5vh, 80px);
   padding-top: clamp(40px, 5svh, 80px);
+  padding-bottom: clamp(40px, 5vh, 80px);
   padding-bottom: clamp(40px, 5svh, 80px);
 }
 
@@ -562,6 +573,7 @@ a {
 .stats__top {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: clamp(18px, 3vh, 30px);
   gap: clamp(18px, 3svh, 30px);
   align-items: center;
 }
@@ -604,7 +616,9 @@ a {
 .stats__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: clamp(18px, 3vh, 30px);
   gap: clamp(18px, 3svh, 30px);
+  margin-top: clamp(36px, 6vh, 80px);
   margin-top: clamp(36px, 6svh, 80px);
 }
 
@@ -621,7 +635,9 @@ a {
 }
 
 .work {
+  min-height: 100vh;
   min-height: 100svh;
+  height: 100vh;
   height: 100svh;
   overflow: hidden;
   color: #1e1e1e;
@@ -665,6 +681,7 @@ a {
 }
 
 .work__masonry {
+  height: 100vh;
   height: 100svh;
   width: 100%;
   display: grid;
@@ -721,6 +738,7 @@ a {
 
 /* About */
 .about-hero {
+  min-height: 100vh;
   min-height: 100svh;
   background: #000;
   position: relative;
@@ -735,6 +753,7 @@ a {
   top: 0;
   bottom: 0;
   width: 50vw;
+  height: 100vh;
   height: 100svh;
   object-fit: contain;
   object-position: left center;
@@ -767,6 +786,7 @@ a {
 }
 
 .about-hero .muted {
+  margin-top: clamp(16px, 3vh, 28px);
   margin-top: clamp(16px, 3svh, 28px);
   font-size: 14px;
 }
@@ -802,6 +822,7 @@ a {
   overflow: hidden !important;
   background: #050114;
   position: relative;
+  padding: clamp(60px, 8vh, 90px) var(--page-padding);
   padding: clamp(60px, 8svh, 90px) var(--page-padding);
   justify-content: center;
 }
@@ -844,6 +865,7 @@ a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 6%;
+  margin-top: clamp(36px, 6vh, 72px);
   margin-top: clamp(36px, 6svh, 72px);
   position: relative;
   --tl-stride: 26.5%;
@@ -1050,9 +1072,12 @@ a {
 .team {
   background-color: #030303;
   justify-content: center;
+  gap: clamp(12px, 2vh, 36px);
   gap: clamp(12px, 2svh, 36px);
   overflow: hidden;
+  padding-top: clamp(60px, 8vh, 96px);
   padding-top: clamp(60px, 8svh, 96px);
+  padding-bottom: clamp(20px, 3vh, 44px);
   padding-bottom: clamp(20px, 3svh, 44px);
 }
 
@@ -1064,6 +1089,7 @@ a {
 }
 
 .team__head h2 {
+  font-size: clamp(28px, 5vh, 62px);
   font-size: clamp(28px, 5svh, 62px);
   letter-spacing: -.01em;
   margin: 0;
@@ -1076,7 +1102,9 @@ a {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: clamp(8px, 0.9vw, 12px);
   width: min(100%, 1680px);
+  height: min(663px, calc(100vh - 220px));
   height: min(663px, calc(100svh - 220px));
+  max-height: 68vh;
   max-height: 68svh;
   margin: 0 auto;
 }
@@ -1202,8 +1230,11 @@ a {
 
 /* --- Footer Section Styles (Unified Auto-Height Scroll Flow) --- */
 .footer.section {
+  height: 100vh !important;
   height: 100svh !important;
+  max-height: 100vh !important;
   max-height: 100svh !important;
+  min-height: 100vh;
   min-height: 100svh;
   background: #000;
   position: relative;
@@ -1228,7 +1259,9 @@ a {
   position: relative;
   display: flex;
   align-items: center;
+  min-height: 50vh;
   min-height: 50svh;
+  padding: clamp(60px, 8vh, 100px) var(--page-padding) clamp(30px, 4vh, 50px);
   padding: clamp(60px, 8svh, 100px) var(--page-padding) clamp(30px, 4svh, 50px);
 }
 
@@ -1278,7 +1311,9 @@ a {
 
 /* Main Footer Block (Image 2) */
 .footer__main-block {
+  min-height: 100vh;
   min-height: 100svh;
+  padding: clamp(20px, 3vh, 40px) 0 clamp(16px, 2vh, 24px);
   padding: clamp(20px, 3svh, 40px) 0 clamp(16px, 2svh, 24px);
   display: flex;
   flex-direction: column;
@@ -1293,9 +1328,12 @@ a {
   overflow: hidden;
   transform: translateY(-30px);
   flex: 1 1 auto;
+  height: clamp(120px, min(32vw, 24vh), 580px);
   height: clamp(120px, min(32vw, 24svh), 580px);
+  min-height: clamp(100px, min(24vw, 18vh), 280px);
   min-height: clamp(100px, min(24vw, 18svh), 280px);
   max-height: 580px;
+  margin: clamp(12px, 1.6vh, 40px) 0 clamp(8px, 1.1vh, 28px);
   margin: clamp(12px, 1.6svh, 40px) 0 clamp(8px, 1.1svh, 28px);
 }
 
@@ -1407,6 +1445,7 @@ a {
   width: 100%;
   margin: 0 auto;
   transform: translateY(-40px);
+  padding: 0 var(--page-padding) clamp(30px, 5vh, 50px);
   padding: 0 var(--page-padding) clamp(30px, 5svh, 50px);
 }
 
@@ -1459,6 +1498,7 @@ a {
 }
 
 .copyright {
+  margin: clamp(16px, 2.5vh, 28px) 0 0;
   margin: clamp(16px, 2.5svh, 28px) 0 0;
   color: rgba(255, 255, 255, 0.45);
   text-align: center;
@@ -1550,6 +1590,7 @@ a {
   }
 
   .hero {
+    min-height: 100vh;
     min-height: 100svh;
   }
 
@@ -1656,6 +1697,7 @@ a {
   .about-hero__image {
     width: auto;
     max-width: 100%;
+    max-height: 20vh;
     max-height: 20svh;
     margin: 0 0 12px;
   }
@@ -1695,6 +1737,7 @@ a {
   }
 
   .mission {
+    min-height: 74vh;
     min-height: 74svh;
   }
 
@@ -1793,6 +1836,7 @@ a {
   }
 
   .footer-cta {
+    min-height: 100vh;
     min-height: 100svh;
     padding-top: 80px;
   }
@@ -1803,6 +1847,7 @@ a {
   }
 
   .footer-main {
+    min-height: 100vh;
     min-height: 100svh;
     padding-top: 20px;
   }
@@ -1879,7 +1924,9 @@ a {
 
 /* --- Contact Page Styles --- */
 .contact-page-section {
+  min-height: 100vh;
   min-height: 100svh;
+  padding-top: clamp(100px, 13vh, 130px);
   padding-top: clamp(100px, 13svh, 130px);
   padding-bottom: 24px;
   background: #000 url('/assets/Group 124@2x.webp') center / cover no-repeat;

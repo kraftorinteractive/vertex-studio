@@ -166,7 +166,7 @@ export default function Home() {
         <div className="hero__content">
           <h1 className="display">Design That Moves<br />Businesses Forward</h1>
           <p className="muted">We create thoughtful digital experiences, powerful brands, and scalable websites that help businesses stand out, grow, and succeed.</p>
-          <a href="#work" className="button button--outline">View Our Work <span className="arrow">↗</span></a>
+          <a href="#work" className="button button--outline">View Our Work <img className="button__arrow-icon" src={`${assets}Group 51.svg`} alt="" aria-hidden="true" style={{ filter: 'brightness(0) saturate(100%) invert(56%) sepia(90%) saturate(1637%) hue-rotate(344deg) brightness(101%) contrast(101%)' }} /></a>
         </div>
         <div className="hero__clients" aria-label="Selected clients">
           <div className="hero__clients-track">
